@@ -1,4 +1,4 @@
-html,
+
 body {
   padding: 0;
   margin: 0;
@@ -6,11 +6,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
+/*Tailwind directives*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
