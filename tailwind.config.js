@@ -6,7 +6,12 @@ module.exports = {
   ],
   theme: {
     fontFamily: {},
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#297AFF',
+        secondary: '#294574'
+      }
+    },
   },
   plugins: [],
 }

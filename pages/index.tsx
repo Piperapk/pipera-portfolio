@@ -16,7 +16,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <div>
-        <nav className="m-3 flex sm:justify-center space-x-4 uppercase">
+        <nav className="m-3 flex justify-center space-x-4 uppercase">
           {[
             ['Home', '#'],
             ['Work', '#'],
