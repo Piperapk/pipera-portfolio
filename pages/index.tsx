@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css'
 
 /* Components */
 import HeroPage from '../components/HeroPage'
+import Navigation from '../components/Navigation'
 
 
 const Home: NextPage = () => {
@@ -13,18 +14,10 @@ const Home: NextPage = () => {
       <Head>
         <title>Ivan Krushkov - Developer</title>
         <meta name="description" content="" />
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
       <div>
-        <nav className="m-3 flex justify-center space-x-4 uppercase">
-          {[
-            ['Home', '#'],
-            ['Work', '#'],
-            ['Contact', '#'],
-          ].map(([title, url]) => (
-            <a key={title} href={url} className="rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">{title}</a>
-          ))}
-        </nav>
+        <Navigation/>
         <HeroPage/>
       </div>
     </div>
