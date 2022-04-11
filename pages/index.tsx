@@ -1,14 +1,16 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 
 /* Components */
 import HeroPage from '../components/HeroPage'
 import Navigation from '../components/Navigation'
+import AboutMe from '../components/AboutMe'
 
 
 const Home: NextPage = () => {
+
+  const containerWidth:string = 'max-w-4xl';
+
   return (
     <div>
       <Head>
@@ -18,7 +20,8 @@ const Home: NextPage = () => {
       </Head>
       <div>
         <Navigation/>
-        <HeroPage/>
+        <HeroPage containerWidth={containerWidth}/>
+        <AboutMe containerWidth={containerWidth}/>
       </div>
     </div>
   )
