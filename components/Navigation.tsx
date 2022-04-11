@@ -28,7 +28,7 @@ return(
     <Fragment>
         <nav className={`py-3 flex justify-center space-x-3 sm:space-x-8 uppercase bg-white border-b-[1px] border-slate-100
         sticky top-0 z-50 backdrop-blur-sm bg-opacity-80
-        transition-all ease-in duration-200 ${showNavbar ? '' : '-translate-y-[80px] -my-8'}`}>
+        transition-transform ease-in duration-200 ${showNavbar ? '' : '-translate-y-[80px] -my-8'}`}>
             {[
                 ['Home', '#'],
                 ['Work', '#'],
