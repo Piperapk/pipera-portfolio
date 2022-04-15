@@ -1,30 +1,37 @@
 import React, { Fragment } from "react";
 import Button_Badge from "./Button_Badge";
+import { Button } from "./Button_Badge";
 
 interface Props {
-    texts: string[],
+    buttons: Button[],
     textSize?: string,
 
     paddingX?: string,
     paddingY?: string,
 
     bgColor?: string
-}
+};
 
 const Button_Badge_Array = ({
-    texts,
-    textSize = "text-base",
-    paddingX = "px-4",
-    paddingY = "py-1",
-    bgColor = "bg-slate-600"
+    buttons,
+    textSize,
+    paddingX,
+    paddingY,
+    bgColor
 }: Props) => {
-    console.log(texts)
-
     return(
         <Fragment>
             {                   
-                texts.map((text, i) => (
-                    <Button_Badge text={text} bgColor={bgColor} textSize={textSize} paddingX={paddingX} paddingY={paddingY} key={i}/>
+                buttons.map((button, i) => (
+                    <Button_Badge 
+                    text={button.text} 
+                    bgColor={bgColor} 
+                    textSize={textSize} 
+                    paddingX={paddingX} 
+                    paddingY={paddingY} 
+                    imgPath={button.imgPath}
+                    imgUrl={button.imgUrl}                    
+                    key={i}/>
                 ))
             }
         </Fragment>
