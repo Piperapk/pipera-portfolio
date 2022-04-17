@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
+import LinkSmoothScroll from '../components/LinkSmoothScroll'
 
 const Navigation = () => {
 
@@ -40,4 +41,4 @@ return(
 
 }
 
-export default Navigation;
+export default Navigation;  
