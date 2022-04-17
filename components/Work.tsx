@@ -7,7 +7,7 @@ interface Props {
     id: string
 }
 
-const Work = forwardRef(({containerWidth, id}: Props) => (
+const Work = forwardRef(({containerWidth, id}: Props, ref) => (
 
         <Fragment>
             <div id={id} className="bg-gray-100">
@@ -19,14 +19,14 @@ const Work = forwardRef(({containerWidth, id}: Props) => (
             <div className="p-10 sm:pt-16 space-y-10">
                 <Work_Card containerWidth={containerWidth}
                 title={"Adventureme - Full-stack Travel Sharing App "}
-                textBodyCase={"Build an app for a missing market segment to help people find adventures with friends or strangers and cut costs."}
+                textBodyCase={"Built an app for a missing market segment to help people find adventures with friends or strangers and cut costs."}
                 textBodyOutcome={"Designed, built and delivered a full-stack cross-platform mobile app in 6 months. Fully fledged business plan developed to support the need of the app and analyze any competition."}
                 tagButtons={[{text: "JavaScript"}, {text: "Vue"}, {text: "NativeScript"}, {text: "Firebase"}]}
                 linkButtons={[{text: "Code", imgPath: "/media/icon_github.svg", imgUrl: "https://github.com/Piperapk/AdventureTimeShare"}, {text: "Play Store", imgPath: "/media/icon_playstore.svg", imgUrl: "https://play.google.com/store/apps/details?id=com.adventuretime.test1&hl=en&gl=US"}]}
                 />
                 <Work_Card containerWidth={containerWidth}
                 title={"Adventureme - Full-stack Travel Sharing App "}
-                textBodyCase={"Build an app for a missing market segment to help people find adventures with friends or strangers and cut costs."}
+                textBodyCase={"Built an app for a missing market segment to help people find adventures with friends or strangers and cut costs."}
                 textBodyOutcome={"Designed, built and delivered a full-stack cross-platform mobile app in 6 months. Fully fledged business plan developed to support the need of the app and analyze any competition."}
                 tagButtons={[{text: "JavaScript"}, {text: "Vue"}, {text: "NativeScript"}, {text: "Firebase"}]}
                 linkButtons={[{text: "Code", imgPath: "/media/icon_github.svg", imgUrl: "https://github.com/Piperapk/AdventureTimeShare"}, {text: "Play Store", imgPath: "/media/icon_playstore.svg", imgUrl: "https://play.google.com/store/apps/details?id=com.adventuretime.test1&hl=en&gl=US"}]}

@@ -1,12 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { createRef } from 'react'
 
 /* Components */
 import HeroPage from '../components/HeroPage'
 import Navigation from '../components/Navigation'
 import AboutMe from '../components/AboutMe'
 import Work from '../components/Work'
-import { createRef } from 'react'
 
 const Home: NextPage = () => {
 
