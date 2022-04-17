@@ -8,7 +8,7 @@ interface Props {
 const HeroPage = (props: Props) => {
   return(
     <Fragment>
-      <div className='text-center m-10 sm:m-[70px] text-4xl font-bold'>
+      <div id="home" className='text-center m-10 sm:m-[70px] text-4xl font-bold'>
         <h1>Hi, <span className='text-primary'>welcome</span> to my work.</h1>
       </div>
 
