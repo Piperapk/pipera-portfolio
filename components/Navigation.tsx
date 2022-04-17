@@ -29,7 +29,7 @@ return(
         transition-transform ease-in duration-200 ${showNavbar ? '' : '-translate-y-[80px] -my-8'}`}>
             {[
                 ['Home', '#'],
-                ['Work', '#'],
+                ['Work', '#work'],
                 ['Contact', '#'],
             ].map(([title, url]) => (
                 <a key={title} href={url} className="rounded-3xl px-3 py-2 text-black text-base font-normal hover:bg-slate-100 hover:text-slate-500">{title}</a>

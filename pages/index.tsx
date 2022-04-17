@@ -6,11 +6,13 @@ import HeroPage from '../components/HeroPage'
 import Navigation from '../components/Navigation'
 import AboutMe from '../components/AboutMe'
 import Work from '../components/Work'
-
+import { createRef } from 'react'
 
 const Home: NextPage = () => {
 
   const containerWidth:string = 'max-w-4xl';
+
+  const workRef = createRef<Text>();
 
   return (
     <div>
@@ -23,7 +25,7 @@ const Home: NextPage = () => {
         <Navigation/>
         <HeroPage containerWidth={containerWidth}/>
         <AboutMe containerWidth={containerWidth}/>
-        <Work containerWidth={containerWidth}/>
+        <Work id="work" ref={workRef} containerWidth={containerWidth}/>
       </div>
     </div>
   )
