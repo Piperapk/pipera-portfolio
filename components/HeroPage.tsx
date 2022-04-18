@@ -1,5 +1,6 @@
 import React, { Fragment} from "react";
 import Image from 'next/image';
+import Button_Primary from "./Button_Primary";
 
 interface Props {
     containerWidth?: string
@@ -40,8 +41,8 @@ const HeroPage = (props: Props) => {
               </a>
           </div>
           <div className='flex justify-center sm:justify-start sm:pt-14 pt-5 items-end space-x-4'>
-            <button className='bg-primary text-white text-base font-semibold p-4 rounded-3xl w-28'>Resume</button>
-            <button className='bg-primary text-white text-base font-semibold p-4 rounded-3xl w-28'>Work</button>
+            <Button_Primary id="#" text="Resume"/>
+            <Button_Primary id="#work" text="Work"/>
           </div>
         </div>
       </div>      

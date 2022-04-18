@@ -30,9 +30,9 @@ return(
             {[
                 ['Home', '#'],
                 ['Work', '#work'],
-                ['Contact', '#'],
+                ['Contact', '#contact'],
             ].map(([title, url]) => (
-                <a key={title} href={url} className="rounded-3xl px-3 py-2 text-black text-base font-normal hover:bg-slate-100 hover:text-slate-500">{title}</a>
+                <a key={title} href={url} className="rounded-3xl px-3 py-2 text-black text-base font-normal sm:hover:bg-slate-100 sm:hover:text-slate-500">{title}</a>
             ))}
         </nav>
     </Fragment>

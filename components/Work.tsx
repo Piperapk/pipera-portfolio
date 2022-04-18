@@ -4,7 +4,7 @@ import Work_Card_Small from "./Work_Card_Small"
 
 interface Props {
     containerWidth?: string
-    id: string
+    id?: string
 }
 
 const Work = forwardRef(({containerWidth, id}: Props, ref) => (
@@ -21,7 +21,7 @@ const Work = forwardRef(({containerWidth, id}: Props, ref) => (
                 title={"Adventureme - Full-stack Travel Sharing App "}
                 textBodyCase={"Built an app for a missing market segment to help people find adventures with friends or strangers and cut costs."}
                 textBodyOutcome={"Designed, built and delivered a full-stack cross-platform mobile app in 6 months. Fully fledged business plan developed to support the need of the app and analyze any competition."}
-                tagButtons={[{text: "JavaScript"}, {text: "Vue"}, {text: "NativeScript"}, {text: "Firebase"}]}
+                tagButtons={[{text: "JavaScript"}, {text: "Vue"}, {text: "NativeScript"}, {text: "Firebase"}, {text: "Unsplash API"}]}
                 linkButtons={[{text: "Code", imgPath: "/media/icon_github.svg", imgUrl: "https://github.com/Piperapk/AdventureTimeShare"}, {text: "Play Store", imgPath: "/media/icon_playstore.svg", imgUrl: "https://play.google.com/store/apps/details?id=com.adventuretime.test1&hl=en&gl=US"}]}
                 />
                 <Work_Card containerWidth={containerWidth}

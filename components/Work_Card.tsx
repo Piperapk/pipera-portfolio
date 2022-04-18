@@ -11,7 +11,6 @@ interface Props {
     textBodyOutcome: string
     tagButtons: Button[]
     linkButtons: Button[]
-
 }
 
 const Work_Card = ({
@@ -24,19 +23,21 @@ const Work_Card = ({
 }: Props) => {
 
     //Dynamic resize of the card element's text padding
-    const [cardTopBarHeight, setCardTopBarHeight] = useState<any>();
+    const [cardTopBarHeight, setCardTopBarHeight] = useState<number>();
     const cardTopBarHeight_ref = useRef<HTMLDivElement>(null);
 
     const resize = () => {
-        setCardTopBarHeight(cardTopBarHeight_ref.current?.clientHeight);
+        let newHeight = cardTopBarHeight_ref.current?.clientHeight as number;
+        //Adding extra 12px of padding to the total height
+        setCardTopBarHeight(newHeight + 12);
     }
 
     useEffect(() => {
         resize()
-    }, [])
-
-    useEffect(() => {
         window.addEventListener("resize", resize);
+        return () =>{
+            window.removeEventListener('scroll', resize)
+        } 
     }, []);
 
     return (
@@ -84,9 +85,9 @@ const Work_Card = ({
                         </div>
                     </div>
 
-                    <div className={`flex-auto basis-[480px] sm:basis-[55%]  bg-white
+                    <div className="flex-auto basis-[480px] sm:basis-[55%]  bg-white
                     rounded-b-2xl sm:rounded-r-2xl sm:rounded-l-none
-                    p-5 pt-4 sm:pt-24 md:pt-16`}>
+                    p-5 pt-4" style={{paddingTop: cardTopBarHeight}}>
                         <span className="font-bold text-base">Case: </span>
                         <p className="text-base whitespace-pre-line">
                             {textBodyCase}

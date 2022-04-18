@@ -7,6 +7,8 @@ import HeroPage from '../components/HeroPage'
 import Navigation from '../components/Navigation'
 import AboutMe from '../components/AboutMe'
 import Work from '../components/Work'
+import Resume from '../components/Resume'
+import Contact from '../components/Contact'
 
 const Home: NextPage = () => {
 
@@ -24,8 +26,10 @@ const Home: NextPage = () => {
       <div>
         <Navigation/>
         <HeroPage containerWidth={containerWidth}/>
-        <AboutMe containerWidth={containerWidth}/>
+        <AboutMe id='about' containerWidth={containerWidth}/>
         <Work id="work" ref={workRef} containerWidth={containerWidth}/>
+        <Resume id="resume" containerWidth={containerWidth}/>
+        <Contact id="contact" containerWidth={containerWidth}/>
       </div>
     </div>
   )
