@@ -1,6 +1,6 @@
 import React, { Fragment} from "react";
 import Image from 'next/image';
-import Button_Primary from "./Button_Primary";
+import Button_Primary from "./buttons/Button_Primary";
 
 interface Props {
     containerWidth?: string

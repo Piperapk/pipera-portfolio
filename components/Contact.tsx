@@ -1,5 +1,5 @@
 import React, { forwardRef, Fragment } from "react";
-import Button_Primary from "./Button_Primary";
+import Button_Primary from "./buttons/Button_Primary";
 import Image from 'next/image';
 
 interface Props {
@@ -36,7 +36,7 @@ const Contact = ({containerWidth, id}: Props) => {
                 </div>
 
                 <div className="border-t border-slate-300"/>
-                <p className="text-sm pt-5">Lovingly designed and build with Next.js and Tailwind <br/> by <span className="text-primary">Ivan Krushkov</span></p>
+                <p className="text-sm pt-5">Lovingly designed and built with Next.js and Tailwind <br/> by <span className="text-primary">Ivan Krushkov</span></p>
             </div>
         </Fragment>
     )

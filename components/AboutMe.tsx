@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import Image from "next/image";
-import Button_List from "./Button_Badge";
+import Button_List from "./buttons/Button_Badge";
 
 interface Props {
     containerWidth?: string
@@ -15,20 +15,22 @@ const AboutMe = (props: Props) => {
                 <h1 className="text-4xl leading-[25px] sm:leading-[30px] font-thin px-5 ">About me</h1>
             </div>
             <div className="border-t border-slate-300"/>
-            <div className="bg-gray-100 px-10 pt-10 pb-20 sm:pt-14">
+            <div className="bg-gray-100 px-10 pt-10 pb-20">
 
                 <div className={`${props.containerWidth} m-auto
                 flex flex-wrap-reverse sm:flex-wrap justify-center`}>
-                    <p className="sm:basis-2/3 self-center sm:pl-5 py-10 sm:py-0
-                    first-letter:text-4xl first-letter:font-light text-lg text-slate-800 leading-normal tracking-tight">
-                        Hey, glad to meet you! I enjoy creating things that are useful, that 
-                        combine engineering, business thinking and strategy. 
-                        <br/><br/>
+                    <p className="sm:basis-2/3 self-center sm:pl-5 py-10
+                    first-letter:text-4xl first-letter:font-light text-lg text-slate-800 leading-normal tracking-tight whitespace-pre-line">
+                        {`Hello, I'm Ivan! I enjoy creating things that combine engineering and the latest tech alongside business thinking and strategy. All of that wrapped-up in an agile environment.
+
                         I love to code and also love to give that code meaning by using my 
                         commercial expertise. Turning projects into opportunities for betterment 
                         of their end users as well as the company they are made for.
+
+                        I adore technology and how it can make our lives better. My passion started with game development and visual effects, then I moved to commercial and business development to see where best I can apply new technology and that leads me to today where I want to directly engineer the projects I'm standing behind and drive myself and teams forward with my business mind.
+                        `}
                     </p>
-                    <div className="hidden sm:block sm:basis-1/3 self-center sm:pl-12 sm:pt-5 containerWidth:pt-0">                    
+                    <div className="hidden sm:block sm:basis-1/3 self-end sm:pl-12 sm:pt-5 containerWidth:pt-0">                    
                         <div className="w-[230px] h-[230px] bg-white flex justify-center items-center shadow-md-top rounded-t-md">
                             <Image src="/media/profile_picture_500x.jpg" alt="profile picture" height="200" width="200"
                             className="rounded-sm"/>

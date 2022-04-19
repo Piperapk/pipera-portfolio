@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import Image from "next/image";
-import Button_List from "./Button_Badge";
+import Button_List from "./buttons/Button_Badge";
 
 interface Props {
     containerWidth?: string

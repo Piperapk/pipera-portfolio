@@ -1,6 +1,6 @@
 import React, { forwardRef, Fragment } from "react";
-import Work_Card from "./Work_Card";
-import Work_Card_Small from "./Work_Card_Small"
+import Work_Card from "./cards/Work_Card";
+import Work_Card_Small from "./cards/Work_Card_Small"
 
 interface Props {
     containerWidth?: string

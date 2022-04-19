@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Button_Badge_Array from "../components/Button_Badge_Array"
-import { Button } from "./Button_Badge";
+import Button_Badge_Array from "../buttons/Button_Badge_Array"
+import { Button } from "../buttons/Button_Badge";
 
 interface Props {
     containerWidth?: string //Max width of the container
