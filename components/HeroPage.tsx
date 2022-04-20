@@ -41,8 +41,8 @@ const HeroPage = (props: Props) => {
               </a>
           </div>
           <div className='flex justify-center sm:justify-start sm:pt-14 pt-5 items-end space-x-4'>
-            <Button_Primary id="#" text="Resume"/>
-            <Button_Primary id="#work" text="Work"/>
+            <Button_Primary href="#resume" text="Resume"/>
+            <Button_Primary href="#work" text="Work"/>
           </div>
         </div>
       </div>      
