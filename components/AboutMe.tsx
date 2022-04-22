@@ -20,7 +20,7 @@ const AboutMe = (props: Props) => {
                 <div className={`${props.containerWidth} m-auto
                 flex flex-wrap-reverse sm:flex-wrap justify-center`}>
                     <p className="sm:basis-2/3 self-center sm:pl-5 py-10
-                    first-letter:text-4xl first-letter:font-light text-lg text-slate-800 leading-normal tracking-tight whitespace-pre-line">
+                    first-letter:text-4xl first-letter:font-light indent-4 text-lg text-slate-800 leading-normal tracking-tight whitespace-pre-line">
                         {`Hello, I'm Ivan! I enjoy creating things that combine engineering and the latest tech alongside business thinking and strategy. All of that wrapped-up in an agile environment.
 
                         I love to code and also love to give that code meaning by using my 
