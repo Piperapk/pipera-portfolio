@@ -34,32 +34,26 @@ const Resume = ({containerWidth, id}:Props) => {
                 <div className={`${containerWidth} m-auto gap-x-8 py-10
                 flex flex-wrap `}>
                     <div className="flex-1">
-                        <Text_Card title={"Engineering"}>
-                            <h4 className="font-bold">Software development skills:</h4>
-                            <p className="leading-loose">{`- Writing efficient, maintainable and testable code.
-                                - Use and knowledge of RESTFul and GraphQL APIs.
-                                - High flexibility and quick learning on the tools required for each project.
-                                - Experience of cross-platform development for Android, iOS and the web.
-                                - Writing user stories with focus on delivering value to the end user.
-                            `}</p>
-                            <h4 className="font-bold">Software development practices:</h4>
-                            <p className="leading-loose">{`- Strong focus on team collaboration and communication.
-                                - Thriving in Agile environment. Solid knowledge of Jira and version control.
-                                - Creating high-level technical requirements and design specifications. 
-                                - Aptitude for UX / UI Design and an eye for detail.
-                            `}</p>
-                        </Text_Card>                
+                        <Text_Card title={"Engineering"} sections={[
+                            {sectionId: 0, sectionTitle: "Software development skills:", sectionList: [
+                                "Writing efficient, maintainable and testable code.",
+                                "Use and knowledge of RESTFul and GraphQL APIs.",
+                                "High flexibility and quick learning on the tools required for each project.",
+                                "Experience of cross-platform development for Android, iOS and the web.",
+                                "Writing user stories with focus on delivering value to the end user."
+                            ]},
+                            {sectionId: 0, sectionTitle: "Software development practices:", sectionList: [
+                                "Strong focus on team collaboration and communication.",
+                                "Thriving in Agile environment. Solid knowledge of Jira and version control.",
+                                "Creating high-level technical requirements and design specifications.",
+                                "Aptitude for UX / UI Design and an eye for detail."
+                            ]}
+                        ]}/>              
                     </div>
                     <div className="flex-1">
-                        <Text_Card title={"Product"}>
-                            <h4 className="font-bold">Software development skills:</h4>
-                            <p>		- Writing efficient, maintainable and testable code.
-                                - Use and knowledge of RESTFul and GraphQL APIs.
-                                - High flexibility and quick learning on the tools required for each project.
-                                - Experience of cross-platform development for Android, iOS and the web.
-                                - Writing user stories with focus on delivering value to the end user.
-                            </p>
-                        </Text_Card>
+
+
+
                     </div>
 
                 </div>

@@ -1,15 +1,24 @@
 import React from "react";
 
+interface Section {
+    sectionId: number
+    sectionTitle: string
+    sectionList: string[]
+}
+
 interface Props {
     containerWidth?: string //Max width of the container
     title: string
-    children: React.ReactNode;
+    children?: React.ReactNode;
+
+    sections: Section[]
 }
 
 const Work_Card = ({
     containerWidth = "",
     title,
-    children
+    children,
+    sections
 }: Props) => {
 
     return (
@@ -23,6 +32,23 @@ const Work_Card = ({
             <div className="bg-white shadow-md-center
             rounded-b-2xl px-5 py-3 text-base whitespace-pre-line">
                 {children}
+
+                {
+                    sections.map(section => (
+                        <div key={section.sectionId}>
+                            <h4 className="font-bold">{section.sectionTitle}</h4>
+                            <ul className="list-disc list-inside">
+                            {
+                                section.sectionList.map(listItem => (
+                                    <li>
+                                        {listItem}
+                                    </li>
+                                ))
+                            }
+                            </ul>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     )
