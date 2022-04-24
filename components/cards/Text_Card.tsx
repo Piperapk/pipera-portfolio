@@ -29,18 +29,18 @@ const Work_Card = ({
                     {title}
                 </h1>
             </div>
-            <div className="bg-white shadow-md-center
+            <div className="bg-white shadow-md-center space-y-5
             rounded-b-2xl px-5 py-3 text-base whitespace-pre-line">
                 {children}
 
                 {
                     sections.map(section => (
                         <div key={section.sectionId}>
-                            <h4 className="font-bold">{section.sectionTitle}</h4>
-                            <ul className="list-disc list-inside">
+                            <h4 className="font-bold pb-1">{section.sectionTitle}</h4>
+                            <ul className="list-disc list-inside marker:text-primary">
                             {
-                                section.sectionList.map(listItem => (
-                                    <li>
+                                section.sectionList.map((listItem, i) => (
+                                    <li key={i} className="pb-1 sm:pb-2">
                                         {listItem}
                                     </li>
                                 ))
