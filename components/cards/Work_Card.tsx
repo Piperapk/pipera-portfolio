@@ -11,6 +11,7 @@ interface Props {
     textBodyOutcome: string
     tagButtons: Button[]
     linkButtons: Button[]
+    image: string
 }
 
 const Work_Card = ({
@@ -19,7 +20,8 @@ const Work_Card = ({
     textBodyCase,
     textBodyOutcome,
     tagButtons,
-    linkButtons
+    linkButtons,
+    image
 }: Props) => {
 
     //Dynamic resize of the card element's text padding
@@ -67,7 +69,7 @@ const Work_Card = ({
                     <div className="flex-auto basis-[395px] sm:basis-[45%] 
                     rounded-t-2xl sm:rounded-l-2xl sm:rounded-r-none 
                     overflow-hidden flex justify-center items-stretch">
-                        <Image src="/media/profile_picture_500x.jpg" alt="work project" height="500" width="700" className="object-cover"/>
+                        <Image src={image} alt="work project" height="500" width="700" className="object-cover"/>
                     </div>
 
                     <div className="sm:hidden">
