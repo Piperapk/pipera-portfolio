@@ -37,7 +37,7 @@ const Resume = ({containerWidth, id}:Props) => {
                         <Text_Card title={"Engineering"} sections={[
                             {sectionId: 0, sectionTitle: "Software development skills:", sectionList: [
                                 "Writing efficient, maintainable and testable code.",
-                                "Use and knowledge of RESTFul and GraphQL APIs.",
+                                "Use and knowledge of RESTful and GraphQL APIs.",
                                 "High flexibility and quick learning on the tools required for each project.",
                                 "Experience of cross-platform development for Android, iOS and the web.",
                                 "Writing user stories with focus on delivering value to the end user."

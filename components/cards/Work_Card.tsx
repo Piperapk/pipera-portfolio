@@ -72,7 +72,7 @@ const Work_Card = ({
                         <Image src={image} alt="work project" height="500" width="700" className="object-cover"/>
                     </div>
 
-                    <div className="sm:hidden">
+                    <div className="sm:hidden flex-auto">
                         <div className="flex-auto min-w-full min-h-max bg-gray-300/30
                             flex flex-wrap">
                                 <div className="min-h-[48px] 

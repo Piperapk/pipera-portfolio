@@ -27,7 +27,7 @@ const AboutMe = (props: Props) => {
                         commercial expertise. Turning projects into opportunities for betterment 
                         of their end users as well as the company they are made for.
 
-                        I adore technology and how it can make our lives better. My passion started with game development and visual effects, then I moved to commercial and business development to see where best I can apply new technology and that leads me to today where I want to directly engineer the projects I'm standing behind and drive myself and teams forward with my business mind.
+                        I adore technology and how it can make our lives better. My passion started with game development and visual effects, then I moved to commercial and business development to see where best I can apply new technology. That leads me to today, where I want to directly engineer the projects I'm standing behind and drive myself and teams forward with my business mind.
                         `}
                     </p>
                     <div className="hidden sm:block sm:basis-1/3 self-end sm:pl-12 sm:pt-5 containerWidth:pt-0">                    
