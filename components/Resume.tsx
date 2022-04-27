@@ -60,7 +60,7 @@ const Resume = ({containerWidth, id}:Props) => {
                             {sectionId: 1, sectionTitle: "Product and commercial skills:", sectionList: [
                                 "Leading product strategy and underlying commercial plans, ensuring they're communicated and implemented across the organization.",
                                 "In-depth market research - customers, competitors and overall market landscape.",
-                                "Liaising with key customers and partners throughout the product life-cycle."
+                                "Liaising with key customers and partners throughout the product life cycle."
                             ]}
                         ]}/>              
                     </div>

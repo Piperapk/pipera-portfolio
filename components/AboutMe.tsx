@@ -52,7 +52,7 @@ const AboutMe = (props: Props) => {
                         <span className="text-lg text-slate-800 leading-normal tracking-tight whitespace-nowrap">{"Tech I've recently used:"}</span>
                         <Button_List text="JavaScript, TypeScript, C++" bgColor="bg-secondary"/>
                         <Button_List text="React, Vue, Next.js" bgColor="bg-secondary"/>
-                        <Button_List text="PostgrSQL, Firebase, Express" bgColor="bg-secondary"/>
+                        <Button_List text="PostgreSQL, Firebase, Express" bgColor="bg-secondary"/>
                     </div>
                     <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                         <span className="text-lg text-slate-800 leading-normal tracking-tight whitespace-nowrap">I like to make things proper:</span>
@@ -61,7 +61,7 @@ const AboutMe = (props: Props) => {
                     </div>
                     <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                         <span className="text-lg text-slate-800 leading-normal tracking-tight whitespace-nowrap">I like to make things look good:</span>
-                        <Button_List text="Tailwind CSS" bgColor="bg-secondary"/>
+                        <Button_List text="Tailwind, CSS" bgColor="bg-secondary"/>
                         <Button_List text="Photoshop, Illustrator, Adobe XD" bgColor="bg-secondary"/>
                     </div>
 
