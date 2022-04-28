@@ -31,9 +31,9 @@ const Resume = ({containerWidth, id}:Props) => {
                     <div className="border-t border-slate-300"/>
                 </div>
 
-                <div className={`${containerWidth} m-auto gap-x-8 gap-y-5 px-10 sm:px-0 py-10
+                <div className={`${containerWidth} m-auto gap-x-8 gap-y-5 px-10 lg:px-0 py-10
                 flex flex-wrap`}>
-                    <div className="flex-1">
+                    <div className="flex-auto w-80">
                         <Text_Card title={"Engineering"} sections={[
                             {sectionId: 0, sectionTitle: "Software development skills:", sectionList: [
                                 "Writing efficient, maintainable and testable code.",
@@ -50,7 +50,7 @@ const Resume = ({containerWidth, id}:Props) => {
                             ]}
                         ]}/>              
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-auto w-80">
                         <Text_Card title={"Product"} sections={[
                             {sectionId: 0, sectionTitle: "Responsibility and Leadership:", sectionList: [
                                 "Driving engineering and non-engineering teams to timely and high-quality delivery.",

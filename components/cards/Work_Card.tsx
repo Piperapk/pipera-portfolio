@@ -75,7 +75,7 @@ const Work_Card = ({
                     <div className="sm:hidden flex-auto">
                         <div className="flex-auto min-w-full min-h-max bg-gray-300/30
                             flex flex-wrap">
-                                <div className="min-h-[48px] 
+                                <div className="min-h-[48px] flex-auto
                                 flex flex-wrap justify-start items-center px-5 py-2 gap-1">
                                     <Button_Badge_Array buttons={tagButtons} bgColor="bg-secondary" textSize="text-sm" paddingY="py-[2px]"/>
                                 </div>

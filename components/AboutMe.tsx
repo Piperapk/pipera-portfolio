@@ -21,11 +21,11 @@ const AboutMe = (props: Props) => {
                 flex flex-wrap-reverse sm:flex-wrap justify-center`}>
                     <p className="sm:basis-2/3 self-center sm:pl-5 py-10
                     first-letter:text-4xl first-letter:font-light indent-4 text-lg text-slate-800 leading-normal tracking-tight whitespace-pre-line">
-                        {`Hello, I'm Ivan! I enjoy creating things that combine engineering and the latest tech alongside business thinking and strategy. All of that wrapped-up in an agile environment.
+                        {`Hello, I'm Ivan! I enjoy creating things that combine engineering and the latest tech alongside business thinking and strategy. All of that wrapped up in an agile environment.
 
                         I love to code and also love to give that code meaning by using my 
-                        commercial expertise. Turning projects into opportunities for betterment 
-                        of their end users as well as the company they are made for.
+                        commercial expertise. Turning projects into opportunities for the betterment 
+                        of their end-users as well as the company they are made for.
 
                         I adore technology and how it can make our lives better. My passion started with game development and visual effects, then I moved to commercial and business development to see where best I can apply new technology. That leads me to today, where I want to directly engineer the projects I'm standing behind and drive myself and teams forward with my business mind.
                         `}
