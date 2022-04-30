@@ -10,7 +10,15 @@ const HeroPage = (props: Props) => {
   return(
     <Fragment>
       <div id="home" className='text-center m-10 sm:m-[70px] text-4xl font-bold'>
-        <h1>Hi, <span className='text-primary'>welcome</span> to my work.</h1>
+        <h1>Hi, <span className='text-primary 
+        relative group hover:text-rose-400'>
+          welcome
+          <span className="absolute scale-0 sm:group-hover:scale-100 opacity-0 sm:group-hover:opacity-100 min-w-max px-3 py-1 -mt-8 top-0 -left-[85%] rounded-2xl 
+          bg-secondary text-white text-base font-normal transition-all duration-200 origin-bottom ease-out">
+            Lovingly designed and built with Next.js and Tailwind
+            <span className="after:block after:absolute after:rotate-45 after:border-4 after:left-1/2 after: after:border-solid after:border-secondary"/>
+          </span>
+        </span> to my work.</h1>
       </div>
 
       <div className={`flex flex-wrap sm:flex-nowrap grid-cols-2 grid-rows-1 ${props.containerWidth} m-auto`}>
@@ -30,13 +38,13 @@ const HeroPage = (props: Props) => {
             </div>
           </div>
           <div className='flex pt-2 space-x-1.5 justify-center sm:justify-start'>
-              <a href='https://github.com/Piperapk' target='_blank' rel='noreferrer'>
+              <a href='https://github.com/Piperapk' target='_blank' rel='noreferrer' className="transition-all duration-300 ease-out hover:-translate-y-1">
                 <Image src={'/media/icon_github.svg'} alt='GitHub profile' width={30} height={30}/>
               </a>
-              <a href='https://www.linkedin.com/in/ivan-krushkov/' target='_blank' rel='noreferrer'>
+              <a href='https://www.linkedin.com/in/ivan-krushkov/' target='_blank' rel='noreferrer' className="transition-all duration-300 ease-out hover:-translate-y-1">
                 <Image src={'/media/icon_linkedin.svg'} alt='GitHub profile' width={30} height={30}/>
               </a>
-              <a href='mailto:i.krushkov@outlook.com' target='_blank' rel='noreferrer'>
+              <a href='mailto:i.krushkov@outlook.com' target='_blank' rel='noreferrer' className="transition-all duration-300 ease-out hover:-translate-y-1">
                 <Image src={'/media/icon_email.svg'} alt='GitHub profile' width={30} height={30}/>
               </a>
           </div>

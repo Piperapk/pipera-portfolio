@@ -12,11 +12,13 @@ const Button_Primary = ({href, id, text, openInNewWindow = false}:Props) => {
         <Fragment>
             {openInNewWindow ? 
                 <a id={id} href={href} target='_blank' rel='noreferrer'>
-                    <button className='bg-primary text-white text-base font-semibold p-4 rounded-3xl min-w-[112px]'>{text}</button>
+                    <button className='bg-primary text-white text-base font-semibold p-4 rounded-3xl min-w-[112px]
+                    transition-colors duration-300 ease-out hover:text-rose-400 hover:bg-white hover:outline-1 hover:outline hover:outline-offset-[-1px] hover:outline-rose-400'>{text}</button>
                 </a> 
                 :
                 <a id={id} href={href}>
-                    <button className='bg-primary text-white text-base font-semibold p-4 rounded-3xl min-w-[112px]'>{text}</button>
+                    <button className='bg-primary text-white text-base font-semibold p-4 rounded-3xl min-w-[112px]
+                    transition-colors duration-300 ease-out hover:text-rose-400 hover:bg-white hover:outline-1 hover:outline hover:outline-offset-[-1px] hover:outline-rose-400'>{text}</button>
                 </a>
             }
 

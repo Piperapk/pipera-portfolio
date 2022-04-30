@@ -9,8 +9,9 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html className="scroll-smooth">
-        <Head />
+      <Html className="scroll-smooth" lang='en'>
+        <Head>
+        </Head>
         <body>
           <Main />
           <NextScript />

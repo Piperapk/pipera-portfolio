@@ -24,13 +24,13 @@ const Contact = ({containerWidth, id}: Props) => {
                     <Button_Primary href="mailto:i.krushkov@outlook.com" text="Say hello!"/>
                 </div>
                 <div className='flex pt-2 pb-5 space-x-1.5 justify-center'>
-                    <a href='https://github.com/Piperapk' target='_blank' rel='noreferrer'>
+                    <a href='https://github.com/Piperapk' target='_blank' rel='noreferrer' className="transition-all duration-300 ease-out hover:-translate-y-1">
                         <Image src={'/media/icon_github.svg'} alt='GitHub profile' width={30} height={30}/>
                     </a>
-                    <a href='https://www.linkedin.com/in/ivan-krushkov/' target='_blank' rel='noreferrer'>
+                    <a href='https://www.linkedin.com/in/ivan-krushkov/' target='_blank' rel='noreferrer' className="transition-all duration-300 ease-out hover:-translate-y-1">
                         <Image src={'/media/icon_linkedin.svg'} alt='GitHub profile' width={30} height={30}/>
                     </a>
-                    <a href='mailto:i.krushkov@outlook.com' target='_blank' rel='noreferrer'>
+                    <a href='mailto:i.krushkov@outlook.com' target='_blank' rel='noreferrer' className="transition-all duration-300 ease-out hover:-translate-y-1">
                         <Image src={'/media/icon_email.svg'} alt='GitHub profile' width={30} height={30}/>
                     </a>
                 </div>

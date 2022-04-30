@@ -42,6 +42,9 @@ const Work_Card = ({
         } 
     }, []);
 
+    //Base 64 image to use as a placeholder image whilst loading
+    const blurDataURL = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNUiWysBwADJgF/SiqohwAAAABJRU5ErkJggg==";
+
     return (
         <div className={`${containerWidth} m-auto`}>
             <h1 className="sm:px-5 pb-1
@@ -61,7 +64,7 @@ const Work_Card = ({
 
                                 <div className="basis-[30%] min-h-[48px]
                                 flex flex-wrap justify-end items-center pr-5 py-2 gap-1">
-                                    <Button_Badge_Array buttons={linkButtons} bgColor="bg-primary" textSize="text-sm" paddingY="py-1.5"/>
+                                    <Button_Badge_Array buttons={linkButtons} bgColor="bg-primary" hoverColor="rose-400" textSize="text-sm" paddingY="py-1.5"/>
                                 </div>
                         </div>
                     </div>
@@ -69,7 +72,9 @@ const Work_Card = ({
                     <div className="flex-auto basis-[395px] sm:basis-[45%] 
                     rounded-t-2xl sm:rounded-l-2xl sm:rounded-r-none 
                     overflow-hidden flex justify-center items-stretch">
-                        <Image src={image} alt="work project" height="500" width="700" className="object-cover"/>
+                        <Image src={image} alt="work project" height="500" width="700" className="object-cover" placeholder="blur" 
+                        blurDataURL={blurDataURL}
+                        />
                     </div>
 
                     <div className="sm:hidden flex-auto">
@@ -82,7 +87,7 @@ const Work_Card = ({
 
                                 <div className="min-h-[48px]
                                 flex flex-wrap justify-end items-center px-5 py-2 gap-1">
-                                    <Button_Badge_Array buttons={linkButtons} bgColor="bg-primary" textSize="text-sm" paddingY="py-1.5"/>
+                                    <Button_Badge_Array buttons={linkButtons} bgColor="bg-primary" hoverColor="rose-400" textSize="text-sm" paddingY="py-1.5"/>
                                 </div>
                         </div>
                     </div>

@@ -11,7 +11,8 @@ const Button_Badge_Array = ({
     textSize,
     paddingX,
     paddingY,
-    bgColor
+    bgColor,
+    hoverColor
 }: Props) => {
     return(
         <Fragment>
@@ -20,6 +21,7 @@ const Button_Badge_Array = ({
                     <Button_Badge 
                     text={button.text} 
                     bgColor={bgColor} 
+                    hoverColor={hoverColor}
                     textSize={textSize} 
                     paddingX={paddingX} 
                     paddingY={paddingY} 

@@ -39,7 +39,7 @@ const AboutMe = (props: Props) => {
                     <div className="sm:hidden self-center sm:pl-12 
                     w-[140px] h-[140px] bg-white flex rounded-full justify-center items-center">                    
                         <div className="w-[130px] h-[130px] bg-white rounded-full overflow-hidden">
-                            <Image src="/media/profile_picture_500x.jpg" alt="profile picture" height="130px" width="130" 
+                            <Image src="/media/profile_picture_500x.jpg" alt="profile picture" height="130px" width="130px" 
                             className="object-none"/>
                         </div> 
                     </div>
