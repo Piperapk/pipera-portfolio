@@ -1,6 +1,7 @@
 import React, { Fragment} from "react";
 import Image from 'next/image';
 import Button_Primary from "./buttons/Button_Primary";
+import Tooltip from "./buttons/Tooltip";
 
 interface Props {
     containerWidth?: string
@@ -11,13 +12,9 @@ const HeroPage = (props: Props) => {
     <Fragment>
       <div id="home" className='text-center m-10 sm:m-[70px] text-4xl font-bold'>
         <h1>Hi, <span className='text-primary 
-        relative group hover:text-rose-400'>
+        relative group hover:text-rose-400 transition-colors ease-out'>
           welcome
-          <span className="absolute scale-0 sm:group-hover:scale-100 opacity-0 sm:group-hover:opacity-100 min-w-max px-3 py-1 -mt-8 top-0 -left-[85%] rounded-2xl 
-          bg-secondary text-white text-base font-normal transition-all duration-200 origin-bottom ease-out">
-            Lovingly designed and built with Next.js and Tailwind
-            <span className="after:block after:absolute after:rotate-45 after:border-4 after:left-1/2 after: after:border-solid after:border-secondary"/>
-          </span>
+          <Tooltip text="Lovingly designed and built with Next.js and Tailwind"/>
         </span> to my work.</h1>
       </div>
 

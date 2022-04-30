@@ -1,6 +1,7 @@
 import React, { forwardRef, Fragment } from "react";
 import Button_Primary from "./buttons/Button_Primary";
 import Image from 'next/image';
+import Tooltip from "./buttons/Tooltip";
 
 interface Props {
     containerWidth?: string
@@ -19,7 +20,10 @@ const Contact = ({containerWidth, id}: Props) => {
             <div className="border-t border-slate-300"/>
 
             <div className={`${containerWidth} m-auto p-16 text-center space-y-6`}>
-                <p className="text-base">Are you looking to say <span className="text-primary">hi</span>?</p>
+                <p className="text-base">Are you looking to say <span className="text-primary group relative hover:text-rose-400 transition-colors ease-out">
+                    hi
+                      <Tooltip text="Hello there! ... General Kenobi!" adjustHPositionLeft="-left-[116px]" adjustVPositionMarginTop="-mt-9"/>
+                </span>?</p>
                 <div>
                     <Button_Primary href="mailto:i.krushkov@outlook.com" text="Say hello!"/>
                 </div>
@@ -36,7 +40,11 @@ const Contact = ({containerWidth, id}: Props) => {
                 </div>
 
                 <div className="border-t border-slate-300"/>
-                <p className="text-sm pt-5">Lovingly designed and built with Next.js and Tailwind <br/> by <span className="text-primary">Ivan Krushkov</span></p>
+                <p className="text-sm pt-5">Lovingly designed and built with Next.js and Tailwind <br/> by <span className="text-primary group relative hover:text-rose-400 transition-colors ease-out">
+                    Ivan Krushkov
+                        <Tooltip text="return this.website;" adjustHPositionLeft="-left-[35px]" adjustVPositionMarginTop="-mt-9"/>
+                    </span>
+                </p>
             </div>
         </Fragment>
     )
