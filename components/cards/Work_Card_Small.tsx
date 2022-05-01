@@ -37,7 +37,7 @@ const Work_Card = ({
                         <Button_Badge_Array buttons={tagButtons} bgColor="bg-secondary" textSize="text-sm" paddingY="py-[2px]"/>
                     </div>
                     <div className="flex-auto flex flex-wrap items-center gap-1 justify-left sm:justify-end">
-                        <Button_Badge_Array buttons={linkButtons} bgColor="bg-primary" textSize="text-sm" paddingY="py-1.5"/>
+                        <Button_Badge_Array buttons={linkButtons} bgColor="bg-primary" hoverColor="rose-400" textSize="text-sm" paddingY="py-1.5"/>
                     </div>
                 </div>
             </div>

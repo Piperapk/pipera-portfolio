@@ -17,12 +17,15 @@ module.exports = {
         'md-center': '0 1px 6px 1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)'
       },
       screens: {
-        'containerWidth': '896px'
+        'containerWidth': '896px',
+        'hh': {'raw': '(hover: hover)'},
+        'pf': {'raw': '(pointer: fine)'}
       },
       fontFamily: {
         //'sans': ['Font name here', ...defaultTheme.fontFamily.sans],
       }
     },
   },
-  plugins: [],
+  darkMode: 'class',
+  plugins: []
 }
