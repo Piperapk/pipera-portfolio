@@ -10,8 +10,8 @@ interface Props {
 const Work = forwardRef(({containerWidth, id}: Props, ref) => (
 
         <Fragment>
-            <div id={id} className="bg-gray-100">
-                <div className={`${containerWidth} m-auto bg-gray-100`}>
+            <div id={id} className="bg-gray-100 dark:bg-slate-700">
+                <div className={`${containerWidth} m-auto bg-gray-100 dark:bg-slate-700`}>
                     <h1 className="text-4xl leading-[25px] sm:leading-[30px] font-thin px-5 ">{"Work"}</h1>
                 </div>
             </div>
@@ -32,7 +32,7 @@ const Work = forwardRef(({containerWidth, id}: Props, ref) => (
                 image="/media/work/adventureme.jpg"
                 />
                 <Work_Card containerWidth={containerWidth}
-                title={"Next.js SSG Portfolio with Typescript"}
+                title={"Next.js Typescript and Tailwind Portfolio"}
                 textBodyCase={"Using the latest web tech and a Jamstack paradigm, a refresh of my Wordpress based portfolio was needed. "}
                 textBodyOutcome={"New portfolio. Fluid, fast and built from scratch on the latest available web frameworks. Designed with inspiration from Bauhaus and the Modernism movements. Deployed on the edge."}
                 tagButtons={[{text: "Next.js"}, {text: "React"}, {text: "Typescript"}, {text: "Tailwind"}, {text: "GitHub"},{text: "Adobe XD"}]}

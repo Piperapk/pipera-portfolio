@@ -20,7 +20,7 @@ const Tooltip = ({
             <span className={`absolute scale-0 sm:group-hover:scale-100 opacity-0 sm:group-hover:opacity-100 min-w-max px-3 py-1 ${adjustVPositionMarginTop} top-0 ${adjustHPositionLeft} rounded-2xl 
             bg-${bgColor} text-white text-base font-normal transition-all duration-200 origin-bottom ease-out`}>
                 {text}
-                <span className={`after:block after:absolute after:rotate-45 after:border-4 after:left-1/2 after: after:border-solid after:border-${bgColor}`}/>
+                <span className={`after:block after:absolute after:rotate-45 after:border-4 after:left-1/2 after: after:border-solid after:border-secondary`}/>
             </span>
         </Fragment>
     )

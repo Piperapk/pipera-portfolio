@@ -15,12 +15,12 @@ const AboutMe = (props: Props) => {
                 <h1 className="text-4xl leading-[25px] sm:leading-[30px] font-thin px-5 ">About me</h1>
             </div>
             <div className="border-t border-slate-300"/>
-            <div className="bg-gray-100 px-10 pt-10 pb-20">
+            <div className="bg-gray-100 px-10 pt-10 pb-20 dark:bg-slate-700">
 
                 <div className={`${props.containerWidth} m-auto
                 flex flex-wrap-reverse sm:flex-wrap justify-center`}>
                     <p className="sm:basis-2/3 self-center sm:pl-5 py-10
-                    first-letter:text-4xl first-letter:font-light indent-4 text-lg text-slate-800 leading-normal tracking-tight whitespace-pre-line">
+                    first-letter:text-4xl first-letter:font-light indent-4 text-lg text-slate-800 dark:text-slate-200 leading-normal tracking-tight whitespace-pre-line">
                         {`Hello, I'm Ivan! I enjoy creating things that combine engineering and the latest tech alongside business thinking and strategy. All of that wrapped up in an agile environment.
 
                         I love to code and also love to give that code meaning by using my 
@@ -49,18 +49,18 @@ const AboutMe = (props: Props) => {
 
                 <div className={`${props.containerWidth} m-auto sm:pl-5 sm:pt-10 space-y-5`}>
                     <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                        <span className="text-lg text-slate-800 leading-normal tracking-tight whitespace-nowrap">{"Tech I've recently used:"}</span>
+                        <span className="text-lg text-slate-800 dark:text-slate-200 leading-normal tracking-tight whitespace-nowrap">{"Tech I've recently used:"}</span>
                         <Button_List text="JavaScript, TypeScript, C++" bgColor="bg-secondary"/>
                         <Button_List text="React, Vue, Next.js" bgColor="bg-secondary"/>
                         <Button_List text="PostgreSQL, Firebase, Express" bgColor="bg-secondary"/>
                     </div>
                     <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                        <span className="text-lg text-slate-800 leading-normal tracking-tight whitespace-nowrap">I like to make things proper:</span>
+                        <span className="text-lg text-slate-800 dark:text-slate-200 leading-normal tracking-tight whitespace-nowrap">I like to make things proper:</span>
                         <Button_List text="Jira, Agile (Scrum)" bgColor="bg-secondary"/>
                         <Button_List text="Git, Perforce Helix Core" bgColor="bg-secondary"/>
                     </div>
                     <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                        <span className="text-lg text-slate-800 leading-normal tracking-tight whitespace-nowrap">I like to make things look good:</span>
+                        <span className="text-lg text-slate-800 dark:text-slate-200 leading-normal tracking-tight whitespace-nowrap">I like to make things look good:</span>
                         <Button_List text="Tailwind, CSS" bgColor="bg-secondary"/>
                         <Button_List text="Photoshop, Illustrator, Adobe XD" bgColor="bg-secondary"/>
                     </div>

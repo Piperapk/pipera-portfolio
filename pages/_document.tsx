@@ -12,7 +12,7 @@ class MyDocument extends Document {
       <Html className="scroll-smooth" lang='en'>
         <Head>
         </Head>
-        <body>
+        <body className='transition-colors duration-500 dark:bg-slate-800'>
           <Main />
           <NextScript />
         </body>

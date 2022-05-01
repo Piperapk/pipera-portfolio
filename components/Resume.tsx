@@ -16,7 +16,7 @@ const Resume = ({containerWidth, id}:Props) => {
                 <h1 className="text-4xl leading-[25px] sm:leading-[30px] font-thin px-5 ">Resume</h1>
             </div>
             <div className="border-t border-slate-300"/>
-            <div className="bg-gray-100 pt-10 pb-20 sm:pt-14">
+            <div className="bg-gray-100 dark:bg-slate-700 pt-10 pb-20 sm:pt-14">
 
                 <div className={`${containerWidth} m-auto
                 flex flex-wrap justify-center py-10`}>

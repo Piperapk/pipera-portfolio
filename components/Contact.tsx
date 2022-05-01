@@ -12,8 +12,8 @@ const Contact = ({containerWidth, id}: Props) => {
 
     return (
         <Fragment>
-            <div id={id} className="bg-gray-100">
-                <div className={`${containerWidth} m-auto bg-gray-100`}>
+            <div id={id} className="bg-gray-100 dark:bg-slate-700">
+                <div className={`${containerWidth} m-auto bg-gray-100 dark:bg-slate-700`}>
                     <h1 className="text-4xl leading-[25px] sm:leading-[30px] font-thin px-5 ">{"Get in touch"}</h1>
                 </div>
             </div>
@@ -29,13 +29,13 @@ const Contact = ({containerWidth, id}: Props) => {
                 </div>
                 <div className='flex pt-2 pb-5 space-x-1.5 justify-center'>
                     <a href='https://github.com/Piperapk' target='_blank' rel='noreferrer' className="transition-all duration-300 ease-out hover:-translate-y-1">
-                        <Image src={'/media/icon_github.svg'} alt='GitHub profile' width={30} height={30}/>
+                        <Image src={'/media/icon_github.svg'} alt='GitHub profile' width={30} height={30} className="dark:invert"/>
                     </a>
                     <a href='https://www.linkedin.com/in/ivan-krushkov/' target='_blank' rel='noreferrer' className="transition-all duration-300 ease-out hover:-translate-y-1">
-                        <Image src={'/media/icon_linkedin.svg'} alt='GitHub profile' width={30} height={30}/>
+                        <Image src={'/media/icon_linkedin.svg'} alt='GitHub profile' width={30} height={30} className="dark:invert"/>
                     </a>
                     <a href='mailto:i.krushkov@outlook.com' target='_blank' rel='noreferrer' className="transition-all duration-300 ease-out hover:-translate-y-1">
-                        <Image src={'/media/icon_email.svg'} alt='GitHub profile' width={30} height={30}/>
+                        <Image src={'/media/icon_email.svg'} alt='GitHub profile' width={30} height={30} className="dark:invert"/>
                     </a>
                 </div>
 

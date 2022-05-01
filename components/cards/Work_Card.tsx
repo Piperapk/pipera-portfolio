@@ -48,7 +48,7 @@ const Work_Card = ({
     return (
         <div className={`${containerWidth} m-auto`}>
             <h1 className="sm:px-5 pb-1
-            text-2xl font-normal text-slate-800">
+            text-2xl font-normal text-slate-800 dark:text-slate-200">
                 {title}
             </h1>
             <div className="relative">
@@ -78,7 +78,7 @@ const Work_Card = ({
                     </div>
 
                     <div className="sm:hidden flex-auto">
-                        <div className="flex-auto min-w-full min-h-max bg-gray-300/30
+                        <div className="flex-auto min-w-full min-h-max bg-gray-300/30 dark:bg-slate-400
                             flex flex-wrap">
                                 <div className="min-h-[48px] flex-auto
                                 flex flex-wrap justify-start items-center px-5 py-2 gap-1">
@@ -92,7 +92,7 @@ const Work_Card = ({
                         </div>
                     </div>
 
-                    <div className="flex-auto basis-[480px] sm:basis-[55%]  bg-white
+                    <div className="flex-auto basis-[480px] sm:basis-[55%]  bg-white dark:bg-slate-600
                     rounded-b-2xl sm:rounded-r-2xl sm:rounded-l-none
                     p-5 pt-4" style={{paddingTop: cardTopBarHeight}}>
                         <span className="font-bold text-base">Case: </span>

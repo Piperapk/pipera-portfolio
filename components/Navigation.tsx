@@ -30,10 +30,11 @@ return(
             {[
                 ['Home', '#'],
                 ['Work', '#work'],
-                ['Contact', '#'],
+                ['Contact', '#contact'],
             ].map(([title, url]) => (
                 <a key={title} href={url} className="rounded-3xl px-3 py-1.5 text-black text-base font-normal 
-                hover:outline hover:outline-1 hover:outline-rose-400  hover:text-rose-400">{title}</a>
+                pf:hh:hover:outline pf:hh:hover:outline-1 pf:hh:hover:outline-rose-400  pf:hh:hover:text-rose-400
+                active:outline active:outline-1 active:outline-rose-400  active:text-rose-400">{title}</a>
             ))}
         </nav>
     </Fragment>
