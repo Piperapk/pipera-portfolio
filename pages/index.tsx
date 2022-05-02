@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { createRef } from 'react'
+import {useTheme} from 'next-themes';
 
 /* Components */
 import HeroPage from '../components/HeroPage'
@@ -15,6 +16,8 @@ const Home: NextPage = () => {
   const containerWidth:string = 'max-w-4xl';
 
   const workRef = createRef<Text>();
+
+  const {theme, setTheme} = useTheme()
 
   return (
     <div>

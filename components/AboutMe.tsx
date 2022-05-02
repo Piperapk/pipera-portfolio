@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import Image from "next/image";
 import Button_List from "./buttons/Button_Badge";
+import {useTheme} from 'next-themes';
 
 interface Props {
     containerWidth?: string
@@ -9,10 +10,21 @@ interface Props {
 
 const AboutMe = (props: Props) => {
 
+    const {theme, setTheme} = useTheme()
+
     return(
         <div className="mt-20">
-            <div className={`${props.containerWidth} m-auto`}>
-                <h1 className="text-4xl leading-[25px] sm:leading-[30px] font-thin px-5 ">About me</h1>
+            <div className={`${props.containerWidth} m-auto flex items-end`}>
+                <div onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="translate-y-1.5 pl-5 dark:hidden cursor-pointer">
+                    <Image src={'/media/icon_lamp.svg'} alt='GitHub profile' width={45} height={45}/>
+                </div>
+                <div onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="relative translate-y-[7px] pl-5 hidden dark:block cursor-pointer">
+                    <div className="absolute top-[13px] -right-[23px]">
+                        <Image src={'/media/lamp_light.svg'} alt='GitHub profile' width={40} height={32} className=""/>
+                    </div>
+                    <Image src={'/media/icon_lamp_on.svg'} alt='GitHub profile' width={45} height={45}/>
+                </div>
+                <h1 className="text-4xl leading-[25px] sm:leading-[30px] font-thin px-7">About me</h1>
             </div>
             <div className="border-t border-slate-300"/>
             <div className="bg-gray-100 px-10 pt-10 pb-20 dark:bg-slate-700">
