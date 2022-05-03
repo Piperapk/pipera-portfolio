@@ -15,16 +15,13 @@ const AboutMe = (props: Props) => {
     return(
         <div className="mt-20">
             <div className={`${props.containerWidth} m-auto flex items-end`}>
-                <div onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="translate-y-1.5 pl-5 dark:hidden cursor-pointer">
-                    <Image src={'/media/icon_lamp.svg'} alt='GitHub profile' width={45} height={45}/>
-                </div>
-                <div onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="relative translate-y-[7px] pl-5 hidden dark:block cursor-pointer">
-                    <div className="absolute top-[13px] -right-[23px]">
+                <div onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="relative translate-y-[6px] pl-5 cursor-pointer">
+                    <div className="absolute top-[13px] -right-[23px] hidden dark:block">
                         <Image src={'/media/lamp_light.svg'} alt='GitHub profile' width={40} height={32} className=""/>
                     </div>
-                    <Image src={'/media/icon_lamp_on.svg'} alt='GitHub profile' width={45} height={45}/>
+                    <Image src={'/media/icon_lamp.svg'} alt='GitHub profile' width={45} height={45} className="dark:invert"/>
                 </div>
-                <h1 className="text-4xl leading-[25px] sm:leading-[30px] font-thin px-7">About me</h1>
+                <h1 className="text-black dark:text-white text-4xl leading-[25px] sm:leading-[30px] font-thin px-7">About me</h1>
             </div>
             <div className="border-t border-slate-300"/>
             <div className="bg-gray-100 px-10 pt-10 pb-20 dark:bg-slate-700">

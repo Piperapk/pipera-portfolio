@@ -1,7 +1,7 @@
 import React, { Fragment} from "react";
-import Image from 'next/image';
 import Button_Primary from "./buttons/Button_Primary";
 import Tooltip from "./buttons/Tooltip";
+import LinkButtons from "./buttons/Link_Buttons";
 
 interface Props {
     containerWidth?: string
@@ -35,15 +35,7 @@ const HeroPage = ({containerWidth}: Props) => {
             </div>
           </div>
           <div className='flex pt-2 space-x-1.5 justify-center sm:justify-start'>
-              <a href='https://github.com/Piperapk' target='_blank' rel='noreferrer' className="transition-all duration-300 ease-out hover:-translate-y-1">
-                <Image src={'/media/icon_github.svg'} alt='GitHub profile' width={30} height={30} className="dark:invert"/>
-              </a>
-              <a href='https://www.linkedin.com/in/ivan-krushkov/' target='_blank' rel='noreferrer' className="transition-all duration-300 ease-out hover:-translate-y-1">
-                <Image src={'/media/icon_linkedin.svg'} alt='GitHub profile' width={30} height={30} className="dark:invert"/>
-              </a>
-              <a href='mailto:i.krushkov@outlook.com' target='_blank' rel='noreferrer' className="transition-all duration-300 ease-out hover:-translate-y-1">
-                <Image src={'/media/icon_email.svg'} alt='GitHub profile' width={30} height={30} className="dark:invert"/>
-              </a>
+            <LinkButtons/>
           </div>
           <div className='flex justify-center sm:justify-start sm:pt-14 pt-5 items-end space-x-4'>
             <Button_Primary href="#resume" text="Resume"/>

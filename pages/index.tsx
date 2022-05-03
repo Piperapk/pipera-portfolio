@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { createRef } from 'react'
-import {useTheme} from 'next-themes';
+import { useTheme } from 'next-themes';
 
 /* Components */
 import HeroPage from '../components/HeroPage'

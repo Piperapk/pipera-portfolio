@@ -1,7 +1,7 @@
 import React, { forwardRef, Fragment } from "react";
 import Button_Primary from "./buttons/Button_Primary";
-import Image from 'next/image';
 import Tooltip from "./buttons/Tooltip";
+import LinkButtons from "./buttons/Link_Buttons";
 
 interface Props {
     containerWidth?: string
@@ -28,15 +28,7 @@ const Contact = ({containerWidth, id}: Props) => {
                     <Button_Primary href="mailto:i.krushkov@outlook.com" text="Say hello!"/>
                 </div>
                 <div className='flex pt-2 pb-5 space-x-1.5 justify-center'>
-                    <a href='https://github.com/Piperapk' target='_blank' rel='noreferrer' className="transition-all duration-300 ease-out hover:-translate-y-1">
-                        <Image src={'/media/icon_github.svg'} alt='GitHub profile' width={30} height={30} className="dark:invert"/>
-                    </a>
-                    <a href='https://www.linkedin.com/in/ivan-krushkov/' target='_blank' rel='noreferrer' className="transition-all duration-300 ease-out hover:-translate-y-1">
-                        <Image src={'/media/icon_linkedin.svg'} alt='GitHub profile' width={30} height={30} className="dark:invert"/>
-                    </a>
-                    <a href='mailto:i.krushkov@outlook.com' target='_blank' rel='noreferrer' className="transition-all duration-300 ease-out hover:-translate-y-1">
-                        <Image src={'/media/icon_email.svg'} alt='GitHub profile' width={30} height={30} className="dark:invert"/>
-                    </a>
+                    <LinkButtons/>
                 </div>
 
                 <div className="border-t border-slate-300"/>

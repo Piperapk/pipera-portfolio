@@ -1,18 +1,29 @@
 import React, { forwardRef, Fragment } from "react";
 import Work_Card from "./cards/Work_Card";
-import Work_Card_Small from "./cards/Work_Card_Small"
+import Work_Card_Small from "./cards/Work_Card_Small";
+import Image from "next/image";
+import {useTheme} from 'next-themes';
 
 interface Props {
     containerWidth?: string
     id?: string
 }
 
-const Work = forwardRef(({containerWidth, id}: Props, ref) => (
+const Work = forwardRef(({containerWidth, id}: Props, ref) => {
 
+    const {theme, setTheme} = useTheme()
+    
+    return(
         <Fragment>
             <div id={id} className="bg-gray-100 dark:bg-slate-700">
-                <div className={`${containerWidth} m-auto bg-gray-100 dark:bg-slate-700`}>
-                    <h1 className="text-4xl leading-[25px] sm:leading-[30px] font-thin px-5 ">{"Work"}</h1>
+                <div className={`${containerWidth} m-auto flex items-end bg-gray-100 dark:bg-slate-700`}>
+                <div onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="relative translate-y-[6.5px] pl-5 cursor-pointer">
+                    <div className="absolute top-[13px] -right-[23px] hidden dark:block">
+                        {/*<Image src={'/media/lamp_light.svg'} alt='GitHub profile' width={40} height={32} className=""/>*/}
+                    </div>
+                    <Image src={'/media/icon_desk.svg'} alt='GitHub profile' width={45} height={45} className="dark:invert"/>
+                </div>
+                    <h1 className="text-black dark:text-white text-4xl leading-[25px] sm:leading-[30px] font-thin px-7">Work</h1>
                 </div>
             </div>
             <div className="border-t border-slate-300"/>
@@ -63,7 +74,8 @@ const Work = forwardRef(({containerWidth, id}: Props, ref) => (
                 />
             </div>
         </Fragment>
-))
+    )
+})
 
 Work.displayName = "Work"
 
