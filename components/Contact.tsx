@@ -1,4 +1,5 @@
-import React, { forwardRef, Fragment } from "react";
+import React, { Fragment } from "react";
+import Image from "next/image";
 import Button_Primary from "./buttons/Button_Primary";
 import Tooltip from "./buttons/Tooltip";
 import LinkButtons from "./buttons/Link_Buttons";
@@ -13,8 +14,11 @@ const Contact = ({containerWidth, id}: Props) => {
     return (
         <Fragment>
             <div id={id} className="bg-gray-100 dark:bg-slate-700">
-                <div className={`${containerWidth} m-auto bg-gray-100 dark:bg-slate-700`}>
-                    <h1 className="text-4xl leading-[25px] sm:leading-[30px] font-thin px-5 ">{"Get in touch"}</h1>
+                <div className={`${containerWidth} m-auto flex items-end bg-gray-100 dark:bg-slate-700`}>
+                <div className="translate-y-[8px] pl-5">
+                    <Image src={'/media/icon_contact.svg'} alt='GitHub profile' width={50} height={45} className="dark:invert"/>
+                </div>
+                    <h1 className="text-black dark:text-white text-4xl leading-[25px] sm:leading-[30px] font-thin px-7">{"Get in touch"}</h1>
                 </div>
             </div>
             <div className="border-t border-slate-300"/>
