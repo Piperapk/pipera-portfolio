@@ -1,21 +1,25 @@
-import React, { Fragment} from "react";
+import React, { Fragment, useEffect, useState} from "react";
 import Button_Primary from "./buttons/Button_Primary";
-import Tooltip from "./buttons/Tooltip";
 import LinkButtons from "./buttons/Link_Buttons";
+import Tooltip_Responsinve from "./buttons/Tooltip_Responsive";
 
 interface Props {
     containerWidth?: string
 }
 
 const HeroPage = ({containerWidth}: Props) => {  
-  return(
+
+  //Handle tooltip/easter egg click
+  const tooltipClick = () => {
+    
+  }
+
+  return (
     <Fragment>
       <div id="home" className='text-center m-10 sm:m-[70px] text-4xl font-bold'>
-        <h1>Hi, <span className='text-primary 
-        relative group hover:text-rose-400 transition-colors ease-out'>
-          welcome
-          <Tooltip text="Lovingly designed and built with Next.js and Tailwind"/>
-        </span> to my work.</h1>
+        <h1>Hi, <Tooltip_Responsinve text="Lovingly designed and built with Next.js and Tailwind"/>
+        to my work.
+        </h1>
       </div>
 
       <div className={`flex flex-wrap sm:flex-nowrap grid-cols-2 grid-rows-1 ${containerWidth} m-auto`}>

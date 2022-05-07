@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import { text } from "stream/consumers";
 
 //Tailwind component interface
 interface Props {
@@ -12,7 +11,7 @@ interface Props {
 const Tooltip = ({
     text,
     bgColor = "secondary",
-    adjustHPositionLeft = "-left-[85%]",
+    adjustHPositionLeft = "-left-[80%]",
     adjustVPositionMarginTop = "-mt-8"
 }:Props) => {
     return(

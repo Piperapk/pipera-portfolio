@@ -37,8 +37,8 @@ const Work_Card = ({
     useEffect(() => {
         resize()
         window.addEventListener("resize", resize);
-        return () =>{
-            window.removeEventListener('scroll', resize)
+        return () => {
+            window.removeEventListener('resize', resize)
         } 
     }, []);
 
@@ -92,7 +92,7 @@ const Work_Card = ({
                         </div>
                     </div>
 
-                    <div className="flex-auto basis-[480px] sm:basis-[55%]  bg-white dark:bg-slate-600
+                    <div className="flex-auto basis-[480px] sm:basis-[55%]  bg-white dark:bg-slate-600 text-black dark:text-white
                     rounded-b-2xl sm:rounded-r-2xl sm:rounded-l-none
                     p-5 pt-4" style={{paddingTop: cardTopBarHeight}}>
                         <span className="font-bold text-base">Case: </span>

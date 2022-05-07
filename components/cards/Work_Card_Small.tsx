@@ -27,7 +27,7 @@ const Work_Card = ({
                     {title}
                 </h1>
             </div>
-            <div className="flex-auto bg-white dark:bg-slate-600 shadow-md-center
+            <div className="flex-auto bg-white dark:bg-slate-600 shadow-md-center text-black dark:text-white
             rounded-b-2xl px-5 py-3">
                 <p className="text-base whitespace-pre-line pb-3">
                     {textBody}

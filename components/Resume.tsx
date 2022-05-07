@@ -14,8 +14,8 @@ const Resume = ({containerWidth, id}:Props) => {
     return(
         <div id={id} className="mt-20">
             <div className={`${containerWidth} m-auto flex items-end`}>
-                <div className="relative translate-y-[9px] pl-5">
-                    <Image src={'/media/icon_resume.svg'} alt='GitHub profile' width={55} height={45} className="dark:invert"/>
+                <div className="relative translate-y-[10px] pl-5">
+                    <Image src={'/media/icon_resume.svg'} alt='GitHub profile' width={55} height={45} className="opacity-80 dark:invert"/>
                 </div>
                 <h1 className="text-black dark:text-white text-4xl leading-[25px] sm:leading-[30px] font-thin px-7">Resume</h1>
             </div>

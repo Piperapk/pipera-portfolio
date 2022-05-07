@@ -29,7 +29,7 @@ const Work_Card = ({
                     {title}
                 </h1>
             </div>
-            <div className="bg-white dark:bg-slate-600 shadow-md-center space-y-5
+            <div className="bg-white dark:bg-slate-600 shadow-md-center space-y-5 text-black dark:text-white
             rounded-b-2xl px-5 py-3 text-base whitespace-pre-line">
                 {children}
 

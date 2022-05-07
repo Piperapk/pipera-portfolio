@@ -17,7 +17,7 @@ const navbarControl = () => {
     //Add and then remove event listener. 
     //Execute function to check if we've scrolled pass the start of the page
     window.addEventListener('scroll', navbarControl)
-    return () =>{
+    return () => {
         window.removeEventListener('scroll', navbarControl)
     } 
  }, []);
