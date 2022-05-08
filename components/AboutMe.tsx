@@ -15,7 +15,7 @@ const AboutMe = ({containerWidth, id}: Props) => {
     return(
         <div className="mt-20">
             <div className={`${containerWidth} m-auto flex items-end`}>
-                <div onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="relative translate-y-[6px] pl-5 cursor-pointer">
+                <div onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="relative translate-y-[7px] pl-5 cursor-default sm:cursor-pointer">
                     <div className="absolute top-[13px] -right-[23px] hidden dark:block">
                         <Image src={'/media/lamp_light.svg'} alt='GitHub profile' width={40} height={32} className=""/>
                     </div>

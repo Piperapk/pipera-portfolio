@@ -18,9 +18,9 @@ const Tooltip_Mobile = ({
 }:Props) => {
     return(
         <Fragment>
-            <span className={`absolute px-3 py-3 ${adjustVPositionMarginTop} ${adjustHPositionLeft} rounded-2xl 
-            bg-${bgColor} text-white text-base font-normal transition-all duration-200 origin-center ease-out
-            -translate-x-1/2 min-w-full ${width}`}>
+            <span className={`absolute px-3 py-3 ${adjustVPositionMarginTop} ${adjustHPositionLeft} rounded-2xl -translate-x-1/2 min-w-full ${width}
+            bg-gradient-to-r from-secondary to-rose-400 text-white text-base font-normal origin-center
+            animate-tooltip`}>
                 {text}
             </span>
         </Fragment>

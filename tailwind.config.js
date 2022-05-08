@@ -23,6 +23,18 @@ module.exports = {
       },
       fontFamily: {
         //'sans': ['Font name here', ...defaultTheme.fontFamily.sans],
+      },
+      animation: {
+        'tooltip': 'fade-in-out 3s ease-in infinite'
+      },
+      keyframes: {
+        'fade-in-out': {
+          '0%': {opacity: '0', filter: 'blur(12px)'},
+          '3%': {opacity: '100', filter: 'blur(0)'},
+          '50%': {opacity: '100', filter: 'blur(0)'},
+          '95%': {opacity: '100', filter: 'blur(0)'},
+          '100%': {opacity: '0', filter: 'blur(12px)'}
+        }
       }
     },
   },
