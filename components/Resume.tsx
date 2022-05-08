@@ -3,6 +3,7 @@ import Image from "next/image";
 import Button_Primary from "./buttons/Button_Primary";
 import Text_Card from "../components/cards/Text_Card";
 import Tooltip from "../components/buttons/Tooltip";
+import Tooltip_Responsinve from "./buttons/Tooltip_Responsive";
 
 interface Props {
     containerWidth?: string
@@ -74,10 +75,11 @@ const Resume = ({containerWidth, id}:Props) => {
                 <div className={`${containerWidth} m-auto px-5 sm:px-0 mt-8`}>
                     <h1 className="text-2xl leading-[15px] sm:leading-[20px] font-light text-center sm:text-left px-5 ">{"Currently working at"}</h1>
                     <div className="border-t border-slate-300"/>
-                    <h4 className="text-lg font-semibold text-center my-12">{`Scudamore's Punting Company - `}<span className="text-primary group relative hover:text-rose-400 transition-colors ease-out">
-                        Commercial and Product Manager
-                            <Tooltip text="Cambridge, UK" adjustHPositionLeft="left-[60px]" adjustVPositionMarginTop="-mt-9"/>
-                        </span>
+                    <h4 className="text-lg font-semibold text-center my-12">{`Scudamore's Punting Company - `} <Tooltip_Responsinve 
+                        text="Commercial and Product Manager" 
+                        tooltipText="Cambridge, UK" 
+                        adjustHPositionLeft="left-[70px]" 
+                        adjustVPositionMarginTop="-mt-9"/>
                     </h4>
                     <div className="border-t border-slate-300"/>
                 </div>

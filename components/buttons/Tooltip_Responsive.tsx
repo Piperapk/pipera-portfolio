@@ -1,23 +1,30 @@
 import React, {Fragment, useEffect, useState } from "react";
+import { setTimeout } from "timers/promises";
 import Tooltip from "./Tooltip";
 import Tooltip_Mobile from "./Tooltip_Mobile";
 
 interface Props {
     text: string
+    tooltipText: string
     bgColor?: string
     adjustHPositionLeft?: string
     adjustVPositionMarginTop?: string
     adjustHPositionLeftMobile?: string
     adjustVPositionMarginTopMobile?: string
+    widthMobile?: string
+    timerMobile?: number
 }
 
 const Tooltip_Responsinve = ({
     text,
+    tooltipText,
     bgColor,
     adjustHPositionLeft,
     adjustVPositionMarginTop,
     adjustHPositionLeftMobile,
-    adjustVPositionMarginTopMobile
+    adjustVPositionMarginTopMobile,
+    widthMobile,
+    timerMobile = 3000
 }: Props) => {
 
     //Getting width of viewport to produce a responsive layout
@@ -41,23 +48,32 @@ const Tooltip_Responsinve = ({
     }, [])
 
     //Handle tooltip/easter egg click
+    const [showTooltip, setShowTooltip] = useState<Boolean>(false)
     const tooltipClick = () => {
-        
+        if (showTooltip) {
+            setShowTooltip(false)
+        } else {
+            setShowTooltip(true)
+            window.setTimeout(() => {
+                setShowTooltip(false)
+            }, timerMobile);
+        }
     }
 
     return (
         <Fragment>
             <span onClick={tooltipClick}
             className='text-primary cursor-pointer select-none relative group hover:text-rose-400 transition-colors ease-out'>
-                welcome
-                {viewportWidth < smBreakpoint ? <Tooltip_Mobile text={text}
+                {text}
+                {viewportWidth < smBreakpoint ? showTooltip ? <Tooltip_Mobile text={tooltipText}
                 bgColor={bgColor}
                 adjustHPositionLeft={adjustHPositionLeftMobile}
                 adjustVPositionMarginTop={adjustVPositionMarginTopMobile}
-                /> : <Tooltip text={text}
+                width={widthMobile}
+                /> : null : <Tooltip text={tooltipText}
                 bgColor={bgColor}
                 adjustHPositionLeft={adjustHPositionLeft}
-                adjustVPositionMarginTop={adjustVPositionMarginTop}
+                adjustVPositionMarginTop={adjustVPositionMarginTop}                
                 />} </span>
         </Fragment>
     )
