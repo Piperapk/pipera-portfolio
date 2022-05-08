@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState} from "react";
+import React, { Fragment} from "react";
 import Button_Primary from "./buttons/Button_Primary";
 import LinkButtons from "./buttons/Link_Buttons";
 import Tooltip_Responsinve from "./buttons/Tooltip_Responsive";
@@ -8,12 +8,6 @@ interface Props {
 }
 
 const HeroPage = ({containerWidth}: Props) => {  
-
-  //Handle tooltip/easter egg click
-  const tooltipClick = () => {
-    
-  }
-
   return (
     <Fragment>
       <div id="home" className='text-center m-10 sm:m-[70px] text-4xl font-bold'>

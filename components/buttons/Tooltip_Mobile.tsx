@@ -22,7 +22,7 @@ const Tooltip_Mobile = ({
             bg-gradient-to-r from-secondary to-rose-400 text-white text-base font-normal origin-center
             animate-tooltip`}>
                 {text}
-            </span>
+            </span>            
         </Fragment>
     )
 }

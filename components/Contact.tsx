@@ -11,13 +11,12 @@ interface Props {
 }
 
 const Contact = ({containerWidth, id}: Props) => {
-
     return (
         <Fragment>
             <div id={id} className="bg-gray-100 dark:bg-slate-700">
                 <div className={`${containerWidth} m-auto flex items-end bg-gray-100 dark:bg-slate-700`}>
                 <div className="translate-y-[9px] pl-5">
-                    <Image src={'/media/icon_contact.svg'} alt='GitHub profile' width={50} height={45} className="opacity-80 dark:invert"/>
+                    <Image src={'/media/icon_contact.svg'} alt='GitHub profile' width={50} height={45} priority className="opacity-80 dark:invert"/>
                 </div>
                     <h1 className="text-black dark:text-white text-4xl leading-[25px] sm:leading-[30px] font-thin px-7">{"Get in touch"}</h1>
                 </div>

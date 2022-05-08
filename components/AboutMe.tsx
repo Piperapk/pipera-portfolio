@@ -17,9 +17,9 @@ const AboutMe = ({containerWidth, id}: Props) => {
             <div className={`${containerWidth} m-auto flex items-end`}>
                 <div onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="relative translate-y-[7px] pl-5 cursor-default sm:cursor-pointer">
                     <div className="absolute top-[13px] -right-[23px] hidden dark:block">
-                        <Image src={'/media/lamp_light.svg'} alt='GitHub profile' width={40} height={32} className=""/>
+                        <Image src={'/media/lamp_light.svg'} alt='GitHub profile' width={40} height={32} priority className=""/>
                     </div>
-                    <Image src={'/media/icon_lamp.svg'} alt='GitHub profile' width={45} height={45} className="opacity-80 dark:invert"/>
+                    <Image src={'/media/icon_lamp.svg'} alt='GitHub profile' width={45} height={45} priority className="opacity-80 dark:invert"/>
                 </div>
                 <h1 className="text-black dark:text-white text-4xl leading-[25px] sm:leading-[30px] font-thin px-7">About me</h1>
             </div>

@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Button_Primary from "./buttons/Button_Primary";
 import Text_Card from "../components/cards/Text_Card";
-import Tooltip from "../components/buttons/Tooltip";
 import Tooltip_Responsinve from "./buttons/Tooltip_Responsive";
 
 interface Props {
@@ -12,11 +11,22 @@ interface Props {
 
 const Resume = ({containerWidth, id}:Props) => {
 
+    const [iconClick, setIconClick] = useState<Boolean | null>(null)
+
     return(
         <div id={id} className="mt-20">
             <div className={`${containerWidth} m-auto flex items-end`}>
-                <div className="relative translate-y-[10px] pl-5">
-                    <Image src={'/media/icon_resume.svg'} alt='GitHub profile' width={55} height={45} className="opacity-80 dark:invert"/>
+                <div onClick={() => setIconClick(iconClick === false ? true : false)}>
+                    {
+                        iconClick ?
+                        <div className="relative translate-y-[10px] pl-5 cursor-default sm:cursor-pointer">
+                            <Image src={'/media/icon_resume.svg'} alt='GitHub profile' width={55} height={45} priority className="opacity-80 dark:invert"/>
+                        </div>
+                        :
+                        <div className="relative translate-y-[10px] pl-5 cursor-default sm:cursor-pointer">
+                            <Image src={'/media/icon_resume.svg'} alt='GitHub profile' width={55} height={45} priority className="opacity-80 dark:invert"/>
+                        </div>
+                    }
                 </div>
                 <h1 className="text-black dark:text-white text-4xl leading-[25px] sm:leading-[30px] font-thin px-7">Resume</h1>
             </div>

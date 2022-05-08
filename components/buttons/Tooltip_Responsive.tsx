@@ -1,5 +1,4 @@
-import React, {Fragment, useEffect, useState } from "react";
-import { setTimeout } from "timers/promises";
+import React, {Fragment, useCallback, useEffect, useState } from "react";
 import Tooltip from "./Tooltip";
 import Tooltip_Mobile from "./Tooltip_Mobile";
 
@@ -48,15 +47,24 @@ const Tooltip_Responsinve = ({
     }, [])
 
     //Handle tooltip/easter egg click
-    const [showTooltip, setShowTooltip] = useState<Boolean>(false)
+    const [showTooltip, setShowTooltip] = useState<Boolean | null>(null)
+
+    useEffect(() => {
+        if (showTooltip != null) {
+            const timeout = window.setTimeout(() => {
+                setShowTooltip(false)
+            }, timerMobile)
+            return () => {
+                window.clearTimeout(timeout)
+            }
+        }
+    }, [showTooltip, timerMobile])
+
     const tooltipClick = () => {
         if (showTooltip) {
             setShowTooltip(false)
         } else {
             setShowTooltip(true)
-            window.setTimeout(() => {
-                setShowTooltip(false)
-            }, timerMobile);
         }
     }
 
