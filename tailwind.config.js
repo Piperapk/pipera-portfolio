@@ -25,7 +25,9 @@ module.exports = {
         //'sans': ['Font name here', ...defaultTheme.fontFamily.sans],
       },
       animation: {
-        'tooltip': 'fade-in-out 3s ease-in infinite'
+        'tooltip': 'fade-in-out 3s ease-in infinite',
+        'pot': 'fade-in 0.5s ease-in',
+        'slide': 'slide-in 0.5s ease-in'
       },
       keyframes: {
         'fade-in-out': {
@@ -34,6 +36,14 @@ module.exports = {
           '50%': {opacity: '100', filter: 'blur(0)'},
           '95%': {opacity: '100', filter: 'blur(0)'},
           '100%': {opacity: '0', filter: 'blur(12px)'}
+        },
+        'fade-in': {
+          '0%': {opacity: '0'},
+          '100%': {opacity: '100'}
+        },
+        'slide-in': {
+          '0%': {transform: 'translateX(0px)'},
+          '100%': {transform: 'translateX(200px) scale(0)'}
         }
       }
     },
