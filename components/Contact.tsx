@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Image from "next/image";
 import Button_Primary from "./buttons/Button_Primary";
 import LinkButtons from "./buttons/Link_Buttons";
@@ -13,11 +13,22 @@ const Contact = ({containerWidth, id}: Props) => {
 
     const [iconClick, setIconClick] = useState<Boolean>(false)
 
+    const activateIcon = () => {
+        if (iconClick) {
+            setIconClick(false)
+        } else {
+            setIconClick(true)
+            window.setTimeout(() => {
+                setIconClick(false)
+            }, 500);
+        }
+    }
+
     return (
         <Fragment>
             <div id={id} className="bg-gray-100 dark:bg-slate-700">
                 <div className={`${containerWidth} m-auto flex items-end bg-gray-100 dark:bg-slate-700`}>
-                    <div onClick={() => setIconClick(iconClick === false ? true : false)} className="flex">
+                    <div onClick={activateIcon} className="flex">
                         <div className="-mb-[6px] pl-5 cursor-default sm:cursor-pointer">
                             <Image src={'/media/icon_contact_pencils.svg'} alt='GitHub profile' width={50} height={45} priority className="opacity-80 dark:invert"/>
                         </div>

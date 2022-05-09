@@ -27,7 +27,7 @@ module.exports = {
       animation: {
         'tooltip': 'fade-in-out 3s ease-in infinite',
         'pot': 'fade-in 0.5s ease-in',
-        'slide': 'slide-in 0.5s ease-in'
+        'slide': 'slide-in 0.5s'
       },
       keyframes: {
         'fade-in-out': {
@@ -43,7 +43,7 @@ module.exports = {
         },
         'slide-in': {
           '0%': {transform: 'translateX(0px)'},
-          '100%': {transform: 'translateX(200px) scale(0)'}
+          '100%': {transform: 'translateX(150px) scale(0)'}
         }
       }
     },
