@@ -16,6 +16,22 @@ const Home: NextPage = () => {
 
   const workRef = createRef<Text>();
 
+  function addProductJsonLd() {
+    return {
+      __html: `{
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "email": "mailto:i.krushkov@outlook.com",
+        "image": "https://ikrushkov.com/_next/image?url=%2Fmedia%2Fprofile_picture_500x.jpg&w=256&q=75",
+        "jobTitle": "Software Developer",
+        "name": "Ivan Krushkov",
+        "givenName": "Ivan",
+        "familyName": "Krushkov",
+        "url": "http://ikrushkov.com"
+      }`,
+    };
+  }
+
   return (
     <div>
       <Head>
@@ -28,6 +44,12 @@ const Home: NextPage = () => {
         <meta property="og:image" content={`https://www.ikrushkov.com/_next/image?url=%2Fmedia%2Fprofile_picture_500x.jpg&w=256&q=75`}/>
 
         <link rel="icon" href="/favicon.svg" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={addProductJsonLd()}
+          key="product-jsonld"
+        />
       </Head>
       <div>
         <Navigation/>

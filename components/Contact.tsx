@@ -28,7 +28,7 @@ const Contact = ({containerWidth, id}: Props) => {
         <Fragment>
             <div id={id} className="bg-gray-100 dark:bg-slate-700">
                 <div className={`${containerWidth} m-auto flex items-end bg-gray-100 dark:bg-slate-700`}>
-                    <div onClick={activateIcon} className="flex">
+                    <div onClick={activateIcon} className="flex translate-y-[1px]">
                         <div className="-mb-[6px] pl-5 cursor-default sm:cursor-pointer">
                             <Image src={'/media/icon_contact_pencils.svg'} alt='GitHub profile' width={50} height={45} priority className="opacity-80 dark:invert"/>
                         </div>

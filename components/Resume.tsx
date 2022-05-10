@@ -11,7 +11,7 @@ interface Props {
 
 const Resume = ({containerWidth, id}:Props) => {
 
-    const [iconClick, setIconClick] = useState<Boolean | null>(null)
+    const [iconClick, setIconClick] = useState<Boolean>(false)
 
     return(
         <div id={id} className="mt-20">
