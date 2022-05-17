@@ -18,7 +18,7 @@ const HeroPage = ({containerWidth}: Props) => {
 
       <div className={`flex flex-wrap sm:flex-nowrap grid-cols-2 grid-rows-1 ${containerWidth} m-auto`}>
         <div className='sm:basis-2/3 self-center
-        mx-4 sm:ml-0 sm:mr-8 mb-8 sm:mb-10 py-3
+        mx-4 sm:ml-0 sm:mr-8 mb-8 sm:mb-10 py-3 pl-5
         text-center sm:text-right sm:text-2xl text-lg font-light border-y-[1px] sm:border-0 border-slate-300'>
           <p>“I use Engineering and Business Development to create long-term value through technology.”</p>
         </div>
@@ -35,7 +35,7 @@ const HeroPage = ({containerWidth}: Props) => {
           <div className='flex pt-2 space-x-1.5 justify-center sm:justify-start'>
             <LinkButtons/>
           </div>
-          <div className='flex justify-center sm:justify-start sm:pt-14 pt-5 items-end space-x-4'>
+          <div className='flex justify-center sm:justify-start sm:pt-14 pt-5 pr-5 items-end space-x-4'>
             <Button_Primary href="#resume" text="Resume"/>
             <Button_Primary href="#work" text="Work"/>
           </div>
