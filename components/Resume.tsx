@@ -20,13 +20,16 @@ const Resume = ({containerWidth, id}:Props) => {
                     {
                         iconClick ?
                         <div className="relative translate-y-[10px] pl-5 cursor-default sm:cursor-pointer">
-                            <div className="absolute top-[15px] -right-[12px] animate-pot">
+                            <div className="absolute top-[15px] -right-[12px] animate-fade-in">
                                 <Image src={'/media/icon_resume_tap.svg'} alt='GitHub profile' width={40} height={26} priority className=""/>
                             </div>
                             <Image src={'/media/icon_resume.svg'} alt='GitHub profile' width={55} height={45} priority className="opacity-80 dark:invert"/>
                         </div>
                         :
                         <div className="relative translate-y-[10px] pl-5 cursor-default sm:cursor-pointer">
+                            <div className="absolute top-[15px] -right-[12px] animate-fade-out">
+                                <Image src={'/media/icon_resume_tap.svg'} alt='GitHub profile' width={40} height={26} priority className=""/>
+                            </div>
                             <Image src={'/media/icon_resume.svg'} alt='GitHub profile' width={55} height={45} priority className="opacity-80 dark:invert"/>
                         </div>
                     }
