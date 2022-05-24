@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState } from "react";
 import Image from "next/image";
 import Button_Primary from "./buttons/Button_Primary";
 import LinkButtons from "./buttons/Link_Buttons";

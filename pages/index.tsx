@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { createRef } from 'react'
+import React, { createRef, useReducer } from 'react'
 
 /* Components */
 import HeroPage from '../components/HeroPage'
@@ -10,12 +10,33 @@ import Work from '../components/Work'
 import Resume from '../components/Resume'
 import Contact from '../components/Contact'
 
+// Easter egg tracker dispatcher
+const EasterEggDispatch = React.createContext(null);
+
+const initialEggCount = { eggs: 0 };
+
+type ACTIONTYPE = 
+  | { type: 'increment'; payload: number }
+  | { type: 'decrement'; payload: number };
+
+const easterEggReducer = (easerEggs: typeof initialEggCount, action: ACTIONTYPE) => {
+  switch (action.type) {
+    case 'increment':
+      return { eggs: easerEggs.eggs + action.payload };
+    case 'decrement':
+      return { eggs: easerEggs.eggs - action.payload };
+    default:
+      throw new Error();
+  }
+}
+
 const Home: NextPage = () => {
 
   const containerWidth:string = 'max-w-4xl';
 
   const workRef = createRef<Text>();
 
+  // Structured Data
   function addProductJsonLd() {
     return {
       __html: `{
@@ -31,6 +52,9 @@ const Home: NextPage = () => {
       }`,
     };
   }
+
+  // Easter egg state tracker
+  const [easerEggs, dispatch] = useReducer(easterEggReducer, initialEggCount);
 
   return (
     <div>
