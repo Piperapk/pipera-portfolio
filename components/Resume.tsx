@@ -9,11 +9,11 @@ interface Props {
     id?: string
 }
 
-const Resume = ({containerWidth, id}:Props) => {
+const Resume = ({ containerWidth, id }: Props) => {
 
     const [iconClick, setIconClick] = useState<Boolean>(false)
 
-    return(
+    return (
         <div id={id} className="mt-20">
             <div className={`${containerWidth} m-auto flex items-end`}>
                 <div onClick={() => setIconClick(iconClick === false ? true : false)}>
@@ -90,14 +90,14 @@ const Resume = ({containerWidth, id}:Props) => {
 
                 <div className={`${containerWidth} m-auto px-5 sm:px-0 mt-8`}>
                     <h1 className="text-2xl leading-[15px] sm:leading-[20px] font-light text-center sm:text-left px-5 ">{"Currently working at"}</h1>
-                    <div className="border-t border-slate-300"/>
-                    <h4 className="text-lg font-semibold text-center my-12">{`Scudamore's Punting Company - `} <Tooltip_Responsinve 
-                        text="Commercial and Product Manager" 
-                        tooltipText="Cambridge, UK" 
-                        adjustHPositionLeft="left-[70px]" 
-                        adjustVPositionMarginTop="-mt-9"/>
+                    <div className="border-t border-slate-300" />
+                    <h4 className="text-lg font-semibold text-center my-12">{`Scudamore's Punting Company - `} <Tooltip_Responsinve
+                        text="Commercial and Product Manager"
+                        tooltipText="Cambridge, UK"
+                        adjustHPositionLeft="left-[70px]"
+                        adjustVPositionMarginTop="-mt-9" />
                     </h4>
-                    <div className="border-t border-slate-300"/>
+                    <div className="border-t border-slate-300" />
                 </div>
 
             </div>

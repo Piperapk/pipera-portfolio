@@ -4,15 +4,16 @@ import LinkButtons from "./buttons/Link_Buttons";
 import Tooltip_Responsinve from "./buttons/Tooltip_Responsive";
 
 interface Props {
-    containerWidth?: string
+  containerWidth?: string
 }
 
-const HeroPage = ({containerWidth}: Props) => {  
+const HeroPage = ({ containerWidth }: Props) => {
+
   return (
     <Fragment>
       <div id="home" className='text-center m-10 sm:m-[70px] text-4xl font-bold'>
-        <h1>Hi, <Tooltip_Responsinve text="welcome" tooltipText="Lovingly designed and built with Next.js and Tailwind" timerMobile={3000}/>
-        to my work.
+        <h1>Hi, <Tooltip_Responsinve text="welcome" tooltipText="Lovingly designed and built with Next.js and Tailwind" timerMobile={3000} />
+          to my work.
         </h1>
       </div>
 
@@ -33,14 +34,14 @@ const HeroPage = ({containerWidth}: Props) => {
             </div>
           </div>
           <div className='flex pt-2 space-x-1.5 justify-center sm:justify-start'>
-            <LinkButtons/>
+            <LinkButtons />
           </div>
           <div className='flex justify-center sm:justify-start sm:pt-14 pt-5 pr-5 items-end space-x-4'>
-            <Button_Primary href="#resume" text="Resume"/>
-            <Button_Primary href="#work" text="Work"/>
+            <Button_Primary href="#resume" text="Resume" />
+            <Button_Primary href="#work" text="Work" />
           </div>
         </div>
-      </div>      
+      </div>
     </Fragment>
   )
 };
