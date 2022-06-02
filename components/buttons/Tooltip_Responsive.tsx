@@ -1,6 +1,7 @@
-import React, {Fragment, useCallback, useEffect, useState } from "react";
+import React, {Fragment, useCallback, useContext, useEffect, useState } from "react";
 import Tooltip from "./Tooltip";
 import Tooltip_Mobile from "./Tooltip_Mobile";
+import { EasterEggContext } from "../context/EasterEggContext"
 
 interface Props {
     text: string
@@ -47,41 +48,62 @@ const Tooltip_Responsinve = ({
     }, [])
 
     //Handle tooltip/easter egg click
-    const [showTooltip, setShowTooltip] = useState<Boolean | null>(null)
+    const [showTooltip, setShowTooltip] = useState<Boolean | null>(null);
+
+    const [isEggFound, setIsEggFound] = useState<Boolean>(false);
+    const eggCountContext = useContext(EasterEggContext)
 
     useEffect(() => {
         if (showTooltip != null) {
             const timeout = window.setTimeout(() => {
-                setShowTooltip(false)
+                setShowTooltip(false);
             }, timerMobile)
             return () => {
-                window.clearTimeout(timeout)
+                window.clearTimeout(timeout);
             }
         }
     }, [showTooltip, timerMobile])
 
     const tooltipClick = () => {
         if (showTooltip) {
-            setShowTooltip(false)
+            setShowTooltip(false);
         } else {
-            setShowTooltip(true)
+            setShowTooltip(true);
+            if (isEggFound) {
+                return;
+            } else {
+                setIsEggFound(true);
+                eggCountContext?.updateEggCount(eggCountContext.eggCount + 1) ;   
+            }
+        }
+    }
+
+    const tooltipHover = () => {
+        if (viewportWidth > smBreakpoint) {
+            if (isEggFound) {
+                return;
+            } else {
+                setIsEggFound(true);
+                eggCountContext?.updateEggCount(eggCountContext.eggCount + 1) ;   
+            }
         }
     }
 
     return (
         <Fragment>
             <span onClick={tooltipClick}
-            className='text-primary cursor-pointer select-none relative group hover:text-rose-400 transition-colors ease-out'>
+                onMouseOver={tooltipHover}
+                className='text-primary cursor-pointer select-none relative group hover:text-rose-400 transition-colors ease-out'>
                 {text}
                 {viewportWidth < smBreakpoint ? showTooltip ? <Tooltip_Mobile text={tooltipText}
-                bgColor={bgColor}
-                adjustHPositionLeft={adjustHPositionLeftMobile}
-                adjustVPositionMarginTop={adjustVPositionMarginTopMobile}
-                width={widthMobile}
+                    bgColor={bgColor}
+                    adjustHPositionLeft={adjustHPositionLeftMobile}
+                    adjustVPositionMarginTop={adjustVPositionMarginTopMobile}
+                    width={widthMobile}
                 /> : null : <Tooltip text={tooltipText}
-                bgColor={bgColor}
-                adjustHPositionLeft={adjustHPositionLeft}
-                adjustVPositionMarginTop={adjustVPositionMarginTop}                
+                    bgColor={bgColor}
+                    adjustHPositionLeft={adjustHPositionLeft}
+                    adjustVPositionMarginTop={adjustVPositionMarginTop}
                 />} </span>
         </Fragment>
     )

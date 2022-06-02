@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import React, { createRef, useReducer } from "react";
+import React, { createRef, useState } from "react";
+import { EasterEggContext } from "../components/context/EasterEggContext"
 
 /* Components */
 import HeroPage from "../components/HeroPage";
@@ -9,36 +10,6 @@ import AboutMe from "../components/AboutMe";
 import Work from "../components/Work";
 import Resume from "../components/Resume";
 import Contact from "../components/Contact";
-
-// Easter egg tracker dispatcher
-const initialEggCount = { eggs: 0 };
-
-type ACTIONTYPE =
-  | { type: "increment"; payload: number }
-  | { type: "decrement"; payload: number };
-
-const easterEggReducer = (
-  easerEggs: typeof initialEggCount,
-  action: ACTIONTYPE
-) => {
-  switch (action.type) {
-    case "increment":
-      console.log("ding");
-      return { eggs: easerEggs.eggs + action.payload };
-    case "decrement":
-      return { eggs: easerEggs.eggs - action.payload };
-    default:
-      throw new Error();
-  }
-};
-
-export interface EasterEggContext {
-  dispatch: (action: ACTIONTYPE) => void;
-}
-
-export const EasterEggDispatch = React.createContext<EasterEggContext | null>(
-  null
-);
 
 const Home: NextPage = () => {
   const containerWidth: string = "max-w-4xl";
@@ -62,8 +33,18 @@ const Home: NextPage = () => {
     };
   }
 
-  // Easter egg state tracker
-  const [easerEggs, dispatch] = useReducer(easterEggReducer, initialEggCount);
+  // Easter egg state tracker and updater
+  const [eggCount, setEggCount] = useState<number>(0);
+
+  const updateEggCount = (newCount: number) => {
+    setEggCount(newCount);
+    console.log("Easter Egg count is " + newCount);
+  }
+
+  const contextValues = {
+    eggCount,
+    updateEggCount
+  }
 
   return (
     <div>
@@ -99,14 +80,14 @@ const Home: NextPage = () => {
         />
       </Head>
       <div>
-        <EasterEggDispatch.Provider value={{ dispatch }}>
+        <EasterEggContext.Provider value={contextValues}>
           <Navigation />
           <HeroPage containerWidth={containerWidth} />
           <AboutMe id="about" containerWidth={containerWidth} />
           <Work id="work" ref={workRef} containerWidth={containerWidth} />
           <Resume id="resume" containerWidth={containerWidth} />
           <Contact id="contact" containerWidth={containerWidth} />
-        </EasterEggDispatch.Provider>
+        </EasterEggContext.Provider>
       </div>
     </div>
   );

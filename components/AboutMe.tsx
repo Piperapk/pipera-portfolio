@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
 import Button_List from "./buttons/Button_Badge";
 import { useTheme } from 'next-themes';
+import { EasterEggContext } from "./context/EasterEggContext"
 
 interface Props {
     containerWidth?: string
@@ -10,7 +11,13 @@ interface Props {
 
 const AboutMe = ({ containerWidth, id }: Props) => {
 
-    const { theme, setTheme } = useTheme()
+    const { theme, setTheme } = useTheme();
+
+    const eggCountContext = useContext(EasterEggContext);
+
+    const iconClick = () => {
+
+    }
 
     return (
         <div className="mt-20">

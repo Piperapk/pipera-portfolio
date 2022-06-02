@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import Button_Primary from "./buttons/Button_Primary";
 import LinkButtons from "./buttons/Link_Buttons";
 import Tooltip_Responsinve from "./buttons/Tooltip_Responsive";
@@ -12,7 +12,10 @@ const HeroPage = ({ containerWidth }: Props) => {
   return (
     <Fragment>
       <div id="home" className='text-center m-10 sm:m-[70px] text-4xl font-bold'>
-        <h1>Hi, <Tooltip_Responsinve text="welcome" tooltipText="Lovingly designed and built with Next.js and Tailwind" timerMobile={3000} />
+        <h1>Hi, <Tooltip_Responsinve
+          text="welcome"
+          tooltipText="Lovingly designed and built with Next.js and Tailwind"
+          timerMobile={3000} />
           to my work.
         </h1>
       </div>
