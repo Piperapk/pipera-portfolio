@@ -1,8 +1,9 @@
-import React, { forwardRef, Fragment } from "react";
+import React, { forwardRef, Fragment, useContext, useState } from "react";
 import Work_Card from "./cards/Work_Card";
 import Work_Card_Small from "./cards/Work_Card_Small";
 import Image from "next/image";
 import { useTheme } from 'next-themes';
+import { EasterEggContext } from "./context/EasterEggContext";
 
 interface Props {
     containerWidth?: string
@@ -11,13 +12,30 @@ interface Props {
 
 const Work = forwardRef(({ containerWidth, id }: Props, ref) => {
 
-    const { theme, setTheme } = useTheme()
+    const { theme, setTheme } = useTheme();
+
+    //Handle tooltip/easter egg click
+    const [isEggFound, setIsEggFound] = useState<Boolean>(false);
+
+    const eggCountContext = useContext(EasterEggContext);
+
+    const iconClick = () => {
+        setTheme(theme === 'dark' ? 'light' : 'dark');
+
+        // Count easter egg
+        if (isEggFound) {
+            return;
+        } else {
+            setIsEggFound(true);
+            eggCountContext?.updateEggCount(eggCountContext.eggCount + 1);
+        }
+    }
 
     return (
         <Fragment>
             <div id={id} className="bg-gray-100 dark:bg-slate-700">
                 <div className={`${containerWidth} m-auto flex items-end bg-gray-100 dark:bg-slate-700`}>
-                    <div onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="relative translate-y-[7px] pl-5 cursor-default sm:cursor-pointer">
+                    <div onClick={iconClick} className="relative translate-y-[7px] pl-5 cursor-default sm:cursor-pointer">
                         <div className="absolute -top-[5px] right-[3px] hidden dark:block">
                             <Image src={'/media/desk_light.svg'} alt='GitHub profile' width={14} height={30} priority className="" />
                         </div>

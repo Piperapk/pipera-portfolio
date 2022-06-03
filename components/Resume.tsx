@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Image from "next/image";
 import Button_Primary from "./buttons/Button_Primary";
 import Text_Card from "../components/cards/Text_Card";
 import Tooltip_Responsinve from "./buttons/Tooltip_Responsive";
+import { EasterEggContext } from "./context/EasterEggContext";
 
 interface Props {
     containerWidth?: string
@@ -11,14 +12,31 @@ interface Props {
 
 const Resume = ({ containerWidth, id }: Props) => {
 
-    const [iconClick, setIconClick] = useState<Boolean>(false)
+    const [isIconClick, setIsIconClick] = useState<Boolean>(false)
+
+    //Handle tooltip/easter egg click
+    const [isEggFound, setIsEggFound] = useState<Boolean>(false);
+
+    const eggCountContext = useContext(EasterEggContext);
+
+    const iconClick = () => {
+        setIsIconClick(isIconClick === false ? true : false);
+
+        // Count easter egg
+        if (isEggFound) {
+            return;
+        } else {
+            setIsEggFound(true);
+            eggCountContext?.updateEggCount(eggCountContext.eggCount + 1) ;   
+        }
+    }
 
     return (
         <div id={id} className="mt-20">
             <div className={`${containerWidth} m-auto flex items-end`}>
-                <div onClick={() => setIconClick(iconClick === false ? true : false)}>
+                <div onClick={iconClick}>
                     {
-                        iconClick ?
+                        isIconClick ?
                         <div className="relative translate-y-[10px] pl-5 cursor-default sm:cursor-pointer">
                             <div className="absolute top-[15px] -right-[12px] animate-fade-in">
                                 <Image src={'/media/icon_resume_tap.svg'} alt='GitHub profile' width={40} height={26} priority className=""/>

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Image from "next/image";
 import Button_List from "./buttons/Button_Badge";
 import { useTheme } from 'next-themes';
@@ -13,16 +13,27 @@ const AboutMe = ({ containerWidth, id }: Props) => {
 
     const { theme, setTheme } = useTheme();
 
+    //Handle tooltip/easter egg click
+    const [isEggFound, setIsEggFound] = useState<Boolean>(false);
+
     const eggCountContext = useContext(EasterEggContext);
 
     const iconClick = () => {
+        setTheme(theme === 'dark' ? 'light' : 'dark');
 
+        // Count easter egg
+        if (isEggFound) {
+            return;
+        } else {
+            setIsEggFound(true);
+            eggCountContext?.updateEggCount(eggCountContext.eggCount + 1);   
+        }
     }
 
     return (
         <div className="mt-20">
             <div className={`${containerWidth} m-auto flex items-end`}>
-                <div onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="relative translate-y-[7px] pl-5 cursor-default sm:cursor-pointer">
+                <div onClick={iconClick} className="relative translate-y-[7px] pl-5 cursor-default sm:cursor-pointer">
                     <div className="absolute top-[13px] -right-[23px] hidden dark:block">
                         <Image src={'/media/lamp_light.svg'} alt='GitHub profile' width={40} height={32} priority className="" />
                     </div>

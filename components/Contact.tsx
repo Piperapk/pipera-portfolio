@@ -1,8 +1,9 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useContext, useState } from "react";
 import Image from "next/image";
 import Button_Primary from "./buttons/Button_Primary";
 import LinkButtons from "./buttons/Link_Buttons";
 import Tooltip_Responsinve from "./buttons/Tooltip_Responsive";
+import { EasterEggContext } from "./context/EasterEggContext";
 
 interface Props {
     containerWidth?: string
@@ -11,16 +12,29 @@ interface Props {
 
 const Contact = ({containerWidth, id}: Props) => {
 
-    const [iconClick, setIconClick] = useState<Boolean>(false)
+    const [isIconClick, setIsIconClick] = useState<Boolean>(false)
 
-    const activateIcon = () => {
-        if (iconClick) {
-            setIconClick(false)
+    //Handle tooltip/easter egg click
+    const [isEggFound, setIsEggFound] = useState<Boolean>(false);
+
+    const eggCountContext = useContext(EasterEggContext);
+
+    const iconClick = () => {
+        if (isIconClick) {
+            setIsIconClick(false)
         } else {
-            setIconClick(true)
+            setIsIconClick(true)
             window.setTimeout(() => {
-                setIconClick(false)
+                setIsIconClick(false)
             }, 500);
+        }
+
+        // Count easter egg
+        if (isEggFound) {
+            return;
+        } else {
+            setIsEggFound(true);
+            eggCountContext?.updateEggCount(eggCountContext.eggCount + 1) ;   
         }
     }
 
@@ -28,11 +42,11 @@ const Contact = ({containerWidth, id}: Props) => {
         <Fragment>
             <div id={id} className="bg-gray-100 dark:bg-slate-700">
                 <div className={`${containerWidth} m-auto flex items-end bg-gray-100 dark:bg-slate-700`}>
-                    <div onClick={activateIcon} className="flex translate-y-[1px]">
+                    <div onClick={iconClick} className="flex translate-y-[1px]">
                         <div className="-mb-[6px] pl-5 cursor-default sm:cursor-pointer">
                             <Image src={'/media/icon_contact_pencils.svg'} alt='GitHub profile' width={50} height={45} priority className="opacity-80 dark:invert"/>
                         </div>
-                        <div className={`-ml-[19px] mt-[19px] -mb-[6px] cursor-default sm:cursor-pointer ${iconClick ? "animate-slide" : ""}`}>
+                        <div className={`-ml-[19px] mt-[19px] -mb-[6px] cursor-default sm:cursor-pointer ${isIconClick ? "animate-slide" : ""}`}>
                             <Image src={'/media/icon_contact_letter.svg'} alt='GitHub profile' width={35} height={26} priority className="opacity-80 dark:invert"/>
                         </div>
                     </div>
