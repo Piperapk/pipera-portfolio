@@ -39,7 +39,7 @@ const HeroPage = ({ containerWidth }: Props) => {
           <div className='flex pt-2 space-x-1.5 justify-center sm:justify-start'>
             <LinkButtons />
           </div>
-          <div className='flex justify-center sm:justify-start sm:pt-14 pt-5 pr-5 items-end space-x-4'>
+          <div className='flex justify-center sm:justify-start sm:pt-14 pt-5 sm:pr-5 items-end space-x-4'>
             <Button_Primary href="#resume" text="Resume" />
             <Button_Primary href="#work" text="Work" />
           </div>

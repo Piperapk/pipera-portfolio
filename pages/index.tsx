@@ -43,7 +43,6 @@ const Home: NextPage = () => {
     if (newCount >= 8) {
       setIsMaxEggs(true);
     }
-    console.log("Easter Egg count is " + newCount);
   }
 
   const contextValues = {

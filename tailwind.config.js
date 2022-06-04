@@ -27,8 +27,10 @@ module.exports = {
       animation: {
         'tooltip': 'fade-in-out 3s ease-in infinite',
         'fade-in': 'fade-in 0.5s ease-in',
+        'fade-in-fast': 'fade-in 0.25s',
         'fade-out': 'fade-out 0.5s ease-in forwards',
-        'slide': 'slide-in 0.5s'
+        'slide': 'slide-in 0.5s',
+        'breathe': 'breathe 6s infinite'
       },
       keyframes: {
         'fade-in-out': {
@@ -50,6 +52,11 @@ module.exports = {
           '0%': {transform: 'translateX(0px)', opacity: '100'},
           '90%': {transform: 'translateX(175px) scale(0)', opacity: '0'},
           '100%': {transform: 'translateX(0) scale(1)', opacity: '100'}
+        },
+        'breathe': {
+          '0%': {transform: 'rotate(1.5deg) scale(1)',opacity: '0.75'},
+          '50%': {transform: 'rotate(-1.5deg) scale(1.1)',opacity: '0.5'},
+          '100%': {transform: 'rotate(1.5deg) scale(1)',opacity: '0.75'}
         }
       }
     },
