@@ -10,6 +10,7 @@ import AboutMe from "../components/AboutMe";
 import Work from "../components/Work";
 import Resume from "../components/Resume";
 import Contact from "../components/Contact";
+import EasterEggCounter from "../components/EasterEggCounter";
 
 const Home: NextPage = () => {
   const containerWidth: string = "max-w-4xl";
@@ -35,14 +36,19 @@ const Home: NextPage = () => {
 
   // Easter egg state tracker and updater
   const [eggCount, setEggCount] = useState<number>(0);
+  const [isMaxEggs, setIsMaxEggs] = useState<boolean>(false);
 
   const updateEggCount = (newCount: number) => {
     setEggCount(newCount);
+    if (newCount >= 8) {
+      setIsMaxEggs(true);
+    }
     console.log("Easter Egg count is " + newCount);
   }
 
   const contextValues = {
     eggCount,
+    isMaxEggs,
     updateEggCount
   }
 
@@ -87,6 +93,7 @@ const Home: NextPage = () => {
           <Work id="work" ref={workRef} containerWidth={containerWidth} />
           <Resume id="resume" containerWidth={containerWidth} />
           <Contact id="contact" containerWidth={containerWidth} />
+          <EasterEggCounter />
         </EasterEggContext.Provider>
       </div>
     </div>
