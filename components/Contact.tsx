@@ -34,7 +34,7 @@ const Contact = ({containerWidth, id}: Props) => {
             return;
         } else {
             setIsEggFound(true);
-            eggCountContext?.updateEggCount(eggCountContext.eggCount + 1) ;   
+            eggCountContext?.updateEggCount(eggCountContext.eggCount + 1);
         }
     }
 
@@ -44,39 +44,39 @@ const Contact = ({containerWidth, id}: Props) => {
                 <div className={`${containerWidth} m-auto flex items-end bg-gray-100 dark:bg-slate-700`}>
                     <div onClick={iconClick} className="flex translate-y-[1px]">
                         <div className="-mb-[6px] pl-5 cursor-default sm:cursor-pointer">
-                            <Image src={'/media/icon_contact_pencils.svg'} alt='GitHub profile' width={50} height={45} priority className="opacity-80 dark:invert"/>
+                            <Image src={'/media/icon_contact_pencils.svg'} alt='GitHub profile' width={50} height={45} priority className="opacity-80 dark:invert" />
                         </div>
                         <div className={`-ml-[19px] mt-[19px] -mb-[6px] cursor-default sm:cursor-pointer ${isIconClick ? "animate-slide" : ""}`}>
-                            <Image src={'/media/icon_contact_letter.svg'} alt='GitHub profile' width={35} height={26} priority className="opacity-80 dark:invert"/>
+                            <Image src={'/media/icon_contact_letter.svg'} alt='GitHub profile' width={35} height={26} priority className="opacity-80 dark:invert" />
                         </div>
                     </div>
                     <h1 className="text-black dark:text-white text-4xl leading-[25px] sm:leading-[30px] font-thin px-7">{"Get in touch"}</h1>
                 </div>
             </div>
-            <div className="border-t border-slate-300"/>
+            <div className="border-t border-slate-300" />
 
             <div className={`${containerWidth} m-auto p-16 text-center space-y-6`}>
-                <p className="text-base">Are you looking to say <Tooltip_Responsinve 
-                text="hi" 
-                tooltipText="Hello there! ... General Kenobi!"
-                adjustHPositionLeft="-left-[116px]" 
-                adjustVPositionMarginTop="-mt-9"
-                adjustVPositionMarginTopMobile="mt-8"/>?</p>
+                <p className="text-base">Are you looking to say <Tooltip_Responsinve
+                    text="hi"
+                    tooltipText="Hello there! ... General Kenobi!"
+                    adjustHPositionLeft="-left-[116px]"
+                    adjustVPositionMarginTop="-mt-9"
+                    adjustVPositionMarginTopMobile="mt-8" />?</p>
                 <div>
-                    <Button_Primary href="mailto:i.krushkov@outlook.com" text="Say hello!"/>
+                    <Button_Primary href="mailto:i.krushkov@outlook.com" text="Say hello!" />
                 </div>
                 <div className='flex pt-2 pb-5 space-x-1.5 justify-center'>
-                    <LinkButtons/>
+                    <LinkButtons />
                 </div>
 
-                <div className="border-t border-slate-300"/>
-                <p className="text-sm pt-5">Lovingly designed and built with Next.js and Tailwind <br/> by <Tooltip_Responsinve 
-                text="Ivan Krushkov" 
-                tooltipText="return (this.person)"
-                adjustHPositionLeft="-left-[35px]" 
-                adjustVPositionMarginTop="-mt-9"
-                adjustVPositionMarginTopMobile="-mt-14"
-                widthMobile="w-[200px]"/>
+                <div className="border-t border-slate-300" />
+                <p className="text-sm pt-5">Lovingly designed and built with Next.js and Tailwind <br /> by <Tooltip_Responsinve
+                    text="Ivan Krushkov"
+                    tooltipText="return (this.person)"
+                    adjustHPositionLeft="-left-[35px]"
+                    adjustVPositionMarginTop="-mt-9"
+                    adjustVPositionMarginTopMobile="-mt-14"
+                    widthMobile="w-[200px]" />
                 </p>
             </div>
         </Fragment>
