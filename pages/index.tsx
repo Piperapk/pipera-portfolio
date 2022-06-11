@@ -1,4 +1,4 @@
-import type { GetStaticProps, NextPage } from "next";
+import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
 import React, { createRef, useState } from "react";
 import { EasterEggContext } from "../context/EasterEggContext"
@@ -17,7 +17,7 @@ interface Props {
   works: PortfolioWorks[]
 }
 
-const Home: NextPage<Props> = ({ works }) => {
+const Home: NextPage<Props> = ({ works }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   const containerWidth: string = "max-w-4xl";
 
