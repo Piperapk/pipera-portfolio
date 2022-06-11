@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { EasterEggContext } from "./context/EasterEggContext";
+import { EasterEggContext } from "../context/EasterEggContext";
 
 const EasterEggCounter = () => {
 

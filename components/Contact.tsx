@@ -3,7 +3,7 @@ import Image from "next/image";
 import Button_Primary from "./buttons/Button_Primary";
 import LinkButtons from "./buttons/Link_Buttons";
 import Tooltip_Responsinve from "./buttons/Tooltip_Responsive";
-import { EasterEggContext } from "./context/EasterEggContext";
+import { EasterEggContext } from "../context/EasterEggContext";
 
 interface Props {
     containerWidth?: string

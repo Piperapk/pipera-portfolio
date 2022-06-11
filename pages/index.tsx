@@ -1,7 +1,8 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import React, { createRef, useState } from "react";
-import { EasterEggContext } from "../components/context/EasterEggContext"
+import { EasterEggContext } from "../context/EasterEggContext"
+import type { PortfolioWorks } from "../types/PortfolioData.Interface"
 
 /* Components */
 import HeroPage from "../components/HeroPage";
@@ -12,7 +13,12 @@ import Resume from "../components/Resume";
 import Contact from "../components/Contact";
 import EasterEggCounter from "../components/EasterEggCounter";
 
-const Home: NextPage = () => {
+interface Props {
+  works: PortfolioWorks[]
+}
+
+const Home: NextPage<Props> = ({ works }) => {
+
   const containerWidth: string = "max-w-4xl";
 
   const workRef = createRef<Text>();
@@ -89,7 +95,7 @@ const Home: NextPage = () => {
           <Navigation />
           <HeroPage containerWidth={containerWidth} />
           <AboutMe id="about" containerWidth={containerWidth} />
-          <Work id="work" ref={workRef} containerWidth={containerWidth} />
+          <Work id="work" ref={workRef} containerWidth={containerWidth} portfolioData={works}/>
           <Resume id="resume" containerWidth={containerWidth} />
           <Contact id="contact" containerWidth={containerWidth} />
           <EasterEggCounter />
@@ -98,5 +104,17 @@ const Home: NextPage = () => {
     </div>
   );
 };
+
+// Get data from Strapi. We call getStaticProps as this is the only Next.js page on the website.
+export const getStaticProps: GetStaticProps = async () => {
+
+  const res = await fetch('https://pipera-portfolio-cms.herokuapp.com/api/works');
+  const data = await res.json();
+  const works: PortfolioWorks = data.data;
+  
+  return {
+      props: { works },
+  }
+}
 
 export default Home;

@@ -1,16 +1,26 @@
 import React, { forwardRef, Fragment, useContext, useState } from "react";
-import Work_Card from "./cards/Work_Card";
-import Work_Card_Small from "./cards/Work_Card_Small";
 import Image from "next/image";
 import { useTheme } from 'next-themes';
-import { EasterEggContext } from "./context/EasterEggContext";
+import { EasterEggContext } from "../context/EasterEggContext";
+import type { PortfolioWorks } from "../types/PortfolioData.Interface"
+
+// Component imports
+import Work_Card from "./cards/Work_Card";
+import Work_Card_Small from "./cards/Work_Card_Small";
+
 
 interface Props {
     containerWidth?: string
     id?: string
+
+    portfolioData: PortfolioWorks[]
 }
 
-const Work = forwardRef(({ containerWidth, id }: Props, ref) => {
+const Work = forwardRef(({
+    containerWidth,
+    id,
+    portfolioData 
+}: Props, ref) => {
 
     const { theme, setTheme } = useTheme();
 
@@ -53,7 +63,7 @@ const Work = forwardRef(({ containerWidth, id }: Props, ref) => {
 
             <div className="p-10 sm:pt-10 space-y-10">
                 <Work_Card containerWidth={containerWidth}
-                    title={"Adventureme - Full-stack Travel Sharing App "}
+                    title={"Adventureme - Full-stack Travel Sharing App"}
                     textBodyCase={"Built a mobile app for a missing market segment to help people find adventures with friends or strangers and cut costs."}
                     textBodyOutcome={"Designed, built and delivered a full-stack cross-platform mobile app in 6 months. Fully fledged business plan developed to support the need of the app and analyze any competition. Utilising Google Firebase for authentication, database and storage."}
                     tagButtons={[{ text: "JavaScript" }, { text: "Vue" }, { text: "NativeScript" }, { text: "Firebase" }, { text: "Unsplash API" }]}

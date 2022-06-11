@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import Image from "next/image";
 import Button_List from "./buttons/Button_Badge";
 import { useTheme } from 'next-themes';
-import { EasterEggContext } from "./context/EasterEggContext"
+import { EasterEggContext } from "../context/EasterEggContext"
 
 interface Props {
     containerWidth?: string

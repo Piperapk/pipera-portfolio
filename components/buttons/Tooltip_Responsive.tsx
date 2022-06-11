@@ -1,7 +1,7 @@
 import React, {Fragment, useCallback, useContext, useEffect, useState } from "react";
 import Tooltip from "./Tooltip";
 import Tooltip_Mobile from "./Tooltip_Mobile";
-import { EasterEggContext } from "../context/EasterEggContext"
+import { EasterEggContext } from "../../context/EasterEggContext"
 
 interface Props {
     text: string
