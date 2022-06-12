@@ -14,3 +14,16 @@ export interface PortfolioWorks {
   id: number
   attributes: PortfolioWork
 }
+
+// Types for the open source work cards
+export interface OpenSourceWork {
+  title: string
+  textBody: string
+  tagButtons: Button[]
+  linkButtons: Button[]
+}
+
+export interface OpenSourceWorks {
+id: number
+attributes: OpenSourceWork
+}

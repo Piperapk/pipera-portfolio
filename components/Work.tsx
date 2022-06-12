@@ -2,18 +2,21 @@ import React, { forwardRef, Fragment, useContext, useState } from "react";
 import Image from "next/image";
 import { useTheme } from 'next-themes';
 import { EasterEggContext } from "../context/EasterEggContext";
-import type { PortfolioWorks } from "../types/PortfolioData.Interface"
+import type { OpenSourceWorks, PortfolioWorks } from "../types/PortfolioData.Interface"
 
 // Component imports
 import Work_Card from "./cards/Work_Card";
 import Work_Card_Small from "./cards/Work_Card_Small";
 
+interface DataIngestionProps {
+    works: PortfolioWorks[]
+    openSourceWorks: OpenSourceWorks[]    
+}
 
 interface Props {
     containerWidth?: string
     id?: string
-
-    portfolioData: PortfolioWorks[]
+    portfolioData: DataIngestionProps
 }
 
 const Work = forwardRef(({
@@ -63,7 +66,7 @@ const Work = forwardRef(({
 
             <div className="p-10 sm:pt-10 space-y-10">
                 {
-                    portfolioData.map(workCard => (
+                    portfolioData.works.map(workCard => (
                         <Work_Card
                             key={workCard.id}
                             containerWidth={containerWidth}
@@ -84,12 +87,18 @@ const Work = forwardRef(({
             </div>
 
             <div className="p-10 sm:pt-10 space-y-10">
-                <Work_Card_Small containerWidth={containerWidth}
-                    title={"OpenRCT2 - Roller Coaster Tycoon 2"}
-                    textBody={"Supporting one of my favourite games with its open source implementation. Successfully added and merged new features. Collaborating over on the main GitHub page of the project with other contributors."}
-                    tagButtons={[{ text: "C++" }, { text: "Git" }]}
-                    linkButtons={[{ text: "Code", imgPath: "/media/icon_github.svg", imgUrl: "https://github.com/OpenRCT2/OpenRCT2" }, { text: "Website", imgPath: "/media/icon_link.svg", imgUrl: "https://openrct2.org/" }]}
-                />
+                {
+                    portfolioData.openSourceWorks.map(openSourceCard => (
+                        <Work_Card_Small 
+                            key={openSourceCard.id}
+                            containerWidth={containerWidth}
+                            title={openSourceCard.attributes.title}
+                            textBody={openSourceCard.attributes.textBody}
+                            tagButtons={openSourceCard.attributes.tagButtons}
+                            linkButtons={openSourceCard.attributes.linkButtons}
+                        />
+                    ))
+                }
             </div>
         </Fragment>
     )

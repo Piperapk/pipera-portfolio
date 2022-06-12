@@ -2,7 +2,7 @@ import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
 import React, { createRef, useState } from "react";
 import { EasterEggContext } from "../context/EasterEggContext"
-import type { PortfolioWorks } from "../types/PortfolioData.Interface"
+import type { PortfolioWorks, OpenSourceWorks } from "../types/PortfolioData.Interface"
 
 /* Components */
 import HeroPage from "../components/HeroPage";
@@ -13,11 +13,17 @@ import Resume from "../components/Resume";
 import Contact from "../components/Contact";
 import EasterEggCounter from "../components/EasterEggCounter";
 
+const STRAPIURL = process.env.STRAPIURL;
+
 interface Props {
   works: PortfolioWorks[]
+  openSourceWorks: OpenSourceWorks[]
 }
 
-const Home: NextPage<Props> = ({ works }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home: NextPage<Props> = ({
+  works,
+  openSourceWorks
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   const containerWidth: string = "max-w-4xl";
 
@@ -55,6 +61,11 @@ const Home: NextPage<Props> = ({ works }: InferGetStaticPropsType<typeof getStat
     eggCount,
     isMaxEggs,
     updateEggCount
+  }
+
+  const portfolioData = {
+    works,
+    openSourceWorks
   }
 
   return (
@@ -95,7 +106,7 @@ const Home: NextPage<Props> = ({ works }: InferGetStaticPropsType<typeof getStat
           <Navigation />
           <HeroPage containerWidth={containerWidth} />
           <AboutMe id="about" containerWidth={containerWidth} />
-          <Work id="work" ref={workRef} containerWidth={containerWidth} portfolioData={works}/>
+          <Work id="work" ref={workRef} containerWidth={containerWidth} portfolioData={portfolioData} />
           <Resume id="resume" containerWidth={containerWidth} />
           <Contact id="contact" containerWidth={containerWidth} />
           <EasterEggCounter />
@@ -108,12 +119,19 @@ const Home: NextPage<Props> = ({ works }: InferGetStaticPropsType<typeof getStat
 // Get data from Strapi. We call getStaticProps as this is the only Next.js page on the website.
 export const getStaticProps: GetStaticProps = async () => {
 
-  const res = await fetch('https://pipera-portfolio-cms.herokuapp.com/api/works');
-  const data = await res.json();
-  const works: PortfolioWorks = data.data;
+  const resWork = await fetch(`${STRAPIURL}/works`);
+  const dataWork = await resWork.json();
+  const works: PortfolioWorks = dataWork.data;
+
+  const resOpenSourceWork = await fetch(`${STRAPIURL}/open-source-works`);
+  const dataOpenSourceWork = await resOpenSourceWork.json();
+  const openSourceWorks: PortfolioWorks = dataOpenSourceWork.data;
   
   return {
-      props: { works },
+    props: {
+      works,
+      openSourceWorks
+    },
   }
 }
 
