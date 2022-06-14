@@ -119,11 +119,11 @@ const Home: NextPage<Props> = ({
 // Get data from Strapi. We call getStaticProps as this is the only Next.js page on the website.
 export const getStaticProps: GetStaticProps = async () => {
 
-  const resWork = await fetch(`${STRAPIURL}/works`);
+  const resWork = await fetch(`${STRAPIURL}/works?populate=*`);
   const dataWork = await resWork.json();
   const works: PortfolioWorks = dataWork.data;
 
-  const resOpenSourceWork = await fetch(`${STRAPIURL}/open-source-works`);
+  const resOpenSourceWork = await fetch(`${STRAPIURL}/open-source-works?populate=*`);
   const dataOpenSourceWork = await resOpenSourceWork.json();
   const openSourceWorks: PortfolioWorks = dataOpenSourceWork.data;
   

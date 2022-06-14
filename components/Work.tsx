@@ -75,7 +75,7 @@ const Work = forwardRef(({
                             textBodyOutcome={workCard.attributes.textOutcome}
                             tagButtons={workCard.attributes.tagButtons}
                             linkButtons={workCard.attributes.linkButtons}
-                            image={workCard.attributes.localImageUrl}
+                            image={workCard.attributes.image ? workCard.attributes.image.data.attributes.url : workCard.attributes.localImageUrl!}
                         />
                     ))
                 }

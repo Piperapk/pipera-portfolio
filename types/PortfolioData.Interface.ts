@@ -7,7 +7,8 @@ export interface PortfolioWork {
     textOutcome: string
     tagButtons: Button[]
     linkButtons: Button[]
-    localImageUrl: string
+    localImageUrl?: string // if you want to hook-up images from Next.js app local storage
+    image: any
   }
   
 export interface PortfolioWorks {

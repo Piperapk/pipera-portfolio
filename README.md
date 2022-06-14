@@ -4,7 +4,7 @@
 <h1>
 </div>
 
-Refresh on my [portfolion](https://ikrushkov.com/) built with Next.js, Typescript and deployed on Vercel. Designed with love in Adobe XD and using Tailwind.
+Refresh on my [portfolio](https://ikrushkov.com/) built with Next.js, Typescript and deployed on Vercel. Designed with love in Adobe XD and using Tailwind.
 
 ## Forking and using the repo
 - If you want to distribute or use the code for your own project please get in touch first. It's not a problem, please just ask first.
