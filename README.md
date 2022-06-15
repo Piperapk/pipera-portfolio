@@ -4,7 +4,7 @@
 <h1>
 </div>
 
-Refresh on my [portfolio](https://ikrushkov.com/) built with Next.js, Typescript and deployed on Vercel. Designed with love in Adobe XD and using Tailwind.
+Refresh on my [portfolio](https://ikrushkov.com/) built with Next.js, Typescript and deployed on Vercel. Designed with love in Adobe XD and using Tailwind. Strapi CMS used for content managment.
 
 ## Forking and using the repo
 - If you want to distribute or use the code for your own project please get in touch first. It's not a problem, please just ask first.
@@ -12,12 +12,18 @@ Refresh on my [portfolio](https://ikrushkov.com/) built with Next.js, Typescript
 
 ## 🛠 Getting Started
 
-First, run the development server:
+- First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 📅 Connect to Strapi CMS
+
+- Open "index.tsx" and change all instances of "STRAPIURL" to the API URLs you want to use for fetching blog data.
+
+- Make sure that your Strapi data follows the TypeScript interface found in "types/PortfolioData.Interface.ts
