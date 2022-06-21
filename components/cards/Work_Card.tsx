@@ -3,7 +3,7 @@ import Image from "next/image";
 import Button_Badge_Array from "../buttons/Button_Badge_Array"
 import { Button } from "../buttons/Button_Badge";
 
-interface Props {
+export interface Props {
     containerWidth?: string //Max width of the container
 
     title: string
