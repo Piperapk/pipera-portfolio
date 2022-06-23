@@ -50,9 +50,9 @@ const Work = forwardRef(({
                 <div className={`${containerWidth} m-auto flex items-end bg-gray-100 dark:bg-slate-700`}>
                     <div onClick={iconClick} className="relative translate-y-[7px] pl-5 cursor-default sm:cursor-pointer">
                         <div className="absolute -top-[5px] right-[3px] hidden dark:block">
-                            <Image src={'/media/desk_light.svg'} alt='GitHub profile' width={14} height={30} priority className="" />
+                            <Image src={'/media/desk_light.svg'} alt='Dark, light mode switch on' width={14} height={30} priority className="" />
                         </div>
-                        <Image src={'/media/icon_desk.svg'} alt='GitHub profile' width={45} height={45} priority className="opacity-80 dark:invert" />
+                        <Image src={'/media/icon_desk.svg'} alt='Dark, light mode switch' width={45} height={45} priority className="opacity-80 dark:invert" />
                     </div>
                     <h1 className="text-black dark:text-white text-4xl leading-[25px] sm:leading-[30px] font-thin px-7">Work</h1>
                 </div>

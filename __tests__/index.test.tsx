@@ -1,8 +1,8 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
+import AboutMe from "../components/AboutMe";
 
 //Components to test
 import Word_Card, { Props as WorkCardProps } from "../components/cards/Work_Card"
-import Work_Card_Small from "../components/cards/Work_Card_Small"
 
 const defaultProps: WorkCardProps = {
     title: 'Card title',
@@ -25,6 +25,20 @@ describe('Work Cards', () => {
     it('Renders Work_Card component', () => {
         render(<Word_Card {...defaultProps}/>);
 
+        //screen.debug();
+    })
+})
+
+describe('Dark/Light mode', () => {
+    it('tests if theme transitions', () => {
+        render(<AboutMe />)
+
         screen.debug();
+
+        const switches = screen.getAllByRole('img', {name: 'Dark, light mode switch'});
+        fireEvent(switches[0], new MouseEvent ('click'));
+
+        screen.debug();
+
     })
 })
