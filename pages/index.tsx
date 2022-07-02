@@ -15,7 +15,7 @@ import EasterEggCounter from "../components/EasterEggCounter";
 
 const STRAPIURL = process.env.STRAPIURL;
 
-interface Props {
+export interface Props {
   works: PortfolioWorks[]
   openSourceWorks: OpenSourceWorks[]
 }
