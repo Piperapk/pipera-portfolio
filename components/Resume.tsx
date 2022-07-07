@@ -112,7 +112,7 @@ const Resume = ({ containerWidth, id }: Props) => {
                     <h4 className="text-lg font-semibold text-center my-12">{`Cambridge Intelligence - `} <Tooltip_Responsinve
                         text="Software Developer"
                         tooltipText="Cambridge, UK"
-                        adjustHPositionLeft="left-[70px]"
+                        adjustHPositionLeft="left-[5px]"
                         adjustVPositionMarginTop="-mt-9" />
                     </h4>
                     <div className="border-t border-slate-300" />
