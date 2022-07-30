@@ -59,7 +59,7 @@ const Contact = ({containerWidth, id}: Props) => {
                 <p className="text-base">Are you looking to say <Tooltip_Responsinve
                     text="hi"
                     tooltipText="Hello there! ... General Kenobi!"
-                    adjustHPositionLeft="-left-[116px]"
+                    adjustHPositionLeft="-left-[118px]"
                     adjustVPositionMarginTop="-mt-9"
                     adjustVPositionMarginTopMobile="mt-8" />?</p>
                 <div>
