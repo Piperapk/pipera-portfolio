@@ -22,7 +22,7 @@ module.exports = {
         'pf': {'raw': '(pointer: fine)'}
       },
       fontFamily: {
-        //'sans': ['Font name here', ...defaultTheme.fontFamily.sans],
+        //'sans': ['Selawik', ...defaultTheme.fontFamily.sans],
       },
       animation: {
         'tooltip': 'fade-in-out 3s ease-in infinite',

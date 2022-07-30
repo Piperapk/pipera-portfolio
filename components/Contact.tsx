@@ -72,7 +72,7 @@ const Contact = ({containerWidth, id}: Props) => {
                 <div className="border-t border-slate-300" />
                 <p className="text-sm pt-5">Lovingly designed and built with Next.js and Tailwind <br /> by <Tooltip_Responsinve
                     text="Ivan Krushkov"
-                    tooltipText="return (this.person)"
+                    tooltipText="return this.person"
                     adjustHPositionLeft="-left-[35px]"
                     adjustVPositionMarginTop="-mt-9"
                     adjustVPositionMarginTopMobile="-mt-14"
