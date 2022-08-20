@@ -76,7 +76,7 @@ const Home: NextPage<Props> = ({
         </title>
         <meta
           name="description"
-          content="I use Engineering and Business Development to create long-term value through technology."
+          content="I use Software and Business Development to create long-term value through technology."
         />
 
         <meta property="og:url" content="http://ikrushkov.com/" />
@@ -86,7 +86,7 @@ const Home: NextPage<Props> = ({
         />
         <meta
           property="og:description"
-          content="I use Engineering and Business Development to create long-term value through technology."
+          content="I use Software and Business Development to create long-term value through technology."
         />
         <meta
           property="og:image"

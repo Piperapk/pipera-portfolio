@@ -24,7 +24,7 @@ const HeroPage = ({ containerWidth }: Props) => {
         <div className='sm:basis-2/3 self-center
         mx-4 sm:ml-0 sm:mr-8 mb-8 sm:mb-10 py-3 pl-5
         text-center sm:text-right sm:text-2xl text-lg font-light border-y-[1px] sm:border-0 border-slate-300'>
-          <p>“I use Engineering and Business Development to create long-term value through technology.”</p>
+          <p>“I use Software and Business Development to create long-term value through technology.”</p>
         </div>
         <div className='sm:basis-1/3 flex-1 
         sm:text-left text-center sm:border-l-[1px] border-black dark:border-gray-300 sm:pl-8
