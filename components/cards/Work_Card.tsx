@@ -96,12 +96,12 @@ const Work_Card = ({
                     rounded-b-2xl sm:rounded-r-2xl sm:rounded-l-none
                     p-5 pt-4" style={{paddingTop: cardTopBarHeight}}>
                         <span className="font-bold text-base">Case: </span>
-                        <p className="text-base whitespace-pre-line">
+                        <p className="font-light text-base whitespace-pre-line">
                             {textBodyCase}
                         </p>
                         <div className="border-t border-slate-300 my-2"/>
                         <span className="font-bold text-base">Outcome: </span>
-                        <p className="text-base whitespace-pre-line">
+                        <p className="font-light text-base whitespace-pre-line">
                             {textBodyOutcome}
                         </p>
 

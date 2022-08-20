@@ -29,7 +29,7 @@ const Work_Card = ({
             </div>
             <div className="flex-auto bg-white dark:bg-slate-600 shadow-md-center text-black dark:text-white
             rounded-b-2xl px-5 py-3">
-                <p className="text-base whitespace-pre-line pb-3">
+                <p className="font-light text-base whitespace-pre-line pb-3">
                     {textBody}
                 </p>
                 <div className="flex flex-wrap gap-y-4">
