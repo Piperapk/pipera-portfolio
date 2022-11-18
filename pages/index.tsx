@@ -13,7 +13,7 @@ import Resume from "../components/Resume";
 import Contact from "../components/Contact";
 import EasterEggCounter from "../components/EasterEggCounter";
 
-const STRAPIURL = process.env.STRAPIURL;
+const STRAPIURL = process.env.STRAPI_LOCAL_URL;
 
 export interface Props {
   works: PortfolioWorks[]

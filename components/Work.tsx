@@ -10,7 +10,7 @@ import Work_Card_Small from "./cards/Work_Card_Small";
 
 interface DataIngestionProps {
     works: PortfolioWorks[]
-    openSourceWorks: OpenSourceWorks[]    
+    openSourceWorks: OpenSourceWorks[]
 }
 
 interface Props {
@@ -22,7 +22,7 @@ interface Props {
 const Work = forwardRef(({
     containerWidth,
     id,
-    portfolioData 
+    portfolioData
 }: Props, ref) => {
 
     const { theme, setTheme } = useTheme();
@@ -75,7 +75,7 @@ const Work = forwardRef(({
                             textBodyOutcome={workCard.attributes.textOutcome}
                             tagButtons={workCard.attributes.tagButtons}
                             linkButtons={workCard.attributes.linkButtons}
-                            image={workCard.attributes.image ? workCard.attributes.image.data.attributes.url : workCard.attributes.localImageUrl!}
+                            image={workCard.attributes.image.data !== null ? workCard.attributes.image.data.attributes.url : workCard.attributes.localImageUrl!}
                         />
                     ))
                 }
@@ -89,7 +89,7 @@ const Work = forwardRef(({
             <div className="p-10 sm:pt-10 space-y-10">
                 {
                     portfolioData.openSourceWorks.map(openSourceCard => (
-                        <Work_Card_Small 
+                        <Work_Card_Small
                             key={openSourceCard.id}
                             containerWidth={containerWidth}
                             title={openSourceCard.attributes.title}
