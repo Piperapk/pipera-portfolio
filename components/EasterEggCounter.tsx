@@ -4,7 +4,7 @@ import { EasterEggContext } from "../context/EasterEggContext";
 const EasterEggCounter = () => {
 
     const eggCountContext = useContext(EasterEggContext);
-    const eggCount = eggCountContext?.eggCount;
+    const eggCount = eggCountContext.eggCount;
 
     const [showBadge, setShowBadge] = useState(false);
     const [startFadeOut, setStartFadeOut] = useState(false);
@@ -37,9 +37,9 @@ const EasterEggCounter = () => {
             {
                 showBadge && (
                     <>
-                        <div 
-                        onClick={badgeClick} 
-                        className={`fixed bottom-5 right-5 sm:bottom-10 sm:right-10 z-50
+                        <div
+                            onClick={badgeClick}
+                            className={`fixed bottom-5 right-5 sm:bottom-10 sm:right-10 z-50
                         animate-fade-in-fast cursor-pointer ${startFadeOut ? "animate-pulse" : ""} ${eggCountContext?.isMaxEggs ? "animate-bounce" : ""}`}
                         >
                             <div className="absolute inset-0 rounded-3xl py-3 px-5

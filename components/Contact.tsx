@@ -10,7 +10,7 @@ interface Props {
     id?: string
 }
 
-const Contact = ({containerWidth, id}: Props) => {
+const Contact = ({ containerWidth, id }: Props) => {
 
     const [isIconClick, setIsIconClick] = useState<Boolean>(false)
 
@@ -34,7 +34,7 @@ const Contact = ({containerWidth, id}: Props) => {
             return;
         } else {
             setIsEggFound(true);
-            eggCountContext?.updateEggCount(eggCountContext.eggCount + 1);
+            eggCountContext.updateEggCount(eggCountContext.eggCount + 1);
         }
     }
 

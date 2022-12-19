@@ -4,7 +4,7 @@ import React from "react";
 export interface EasterEggContextInterface {
     eggCount: number;
     isMaxEggs: boolean;
-    updateEggCount: (newCount: number) => void; 
-  }
-  
-export const EasterEggContext = React.createContext<EasterEggContextInterface | null>(null)
+    updateEggCount: (newCount: number) => void;
+}
+
+export const EasterEggContext = React.createContext<EasterEggContextInterface>({ eggCount: 0, isMaxEggs: false, updateEggCount: () => { } })

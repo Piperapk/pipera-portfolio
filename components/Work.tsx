@@ -40,7 +40,7 @@ const Work = forwardRef(({
             return;
         } else {
             setIsEggFound(true);
-            eggCountContext?.updateEggCount(eggCountContext.eggCount + 1);
+            eggCountContext.updateEggCount(eggCountContext.eggCount + 1);
         }
     }
 

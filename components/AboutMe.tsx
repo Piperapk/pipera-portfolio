@@ -26,7 +26,7 @@ const AboutMe = ({ containerWidth, id }: Props) => {
             return;
         } else {
             setIsEggFound(true);
-            eggCountContext?.updateEggCount(eggCountContext.eggCount + 1);   
+            eggCountContext.updateEggCount(eggCountContext.eggCount + 1);
         }
     }
 
