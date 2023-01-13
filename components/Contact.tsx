@@ -44,13 +44,13 @@ const Contact = ({ containerWidth, id }: Props) => {
                 <div className={`${containerWidth} m-auto flex items-end bg-gray-100 dark:bg-slate-700`}>
                     <div onClick={iconClick} className="flex translate-y-[1px]">
                         <div className="-mb-[6px] pl-5 cursor-default sm:cursor-pointer">
-                            <Image src={'/media/icon_contact_pencils.svg'} alt='contacts icon' width={50} height={45} priority className="opacity-80 dark:invert" />
+                            <Image src={'/media/icon_contact_pencils.svg'} alt='contacts icon' width={45} height={45} priority className="opacity-80 dark:invert" />
                         </div>
                         <div className={`-ml-[19px] mt-[19px] -mb-[6px] cursor-default sm:cursor-pointer ${isIconClick ? "animate-slide" : ""}`}>
-                            <Image src={'/media/icon_contact_letter.svg'} alt='contacts icon' width={35} height={26} priority className="opacity-80 dark:invert" />
+                            <Image src={'/media/icon_contact_letter.svg'} alt='contacts icon' width={40} height={26} priority className="opacity-80 dark:invert" />
                         </div>
                     </div>
-                    <h1 className="text-black dark:text-white text-4xl leading-[25px] sm:leading-[30px] font-thin px-7">{"Get in touch"}</h1>
+                    <h1 className="text-black dark:text-white text-4xl leading-[25px] sm:leading-[25px] font-thin px-7">{"Get in touch"}</h1>
                 </div>
             </div>
             <div className="border-t border-slate-300" />
@@ -59,7 +59,7 @@ const Contact = ({ containerWidth, id }: Props) => {
                 <p className="text-base">Are you looking to say <Tooltip_Responsinve
                     text="hi"
                     tooltipText="Hello there! ... General Kenobi!"
-                    adjustHPositionLeft="-left-[118px]"
+                    adjustHPositionLeft="-left-[112px]"
                     adjustVPositionMarginTop="-mt-9"
                     adjustVPositionMarginTopMobile="mt-8" />?</p>
                 <div>

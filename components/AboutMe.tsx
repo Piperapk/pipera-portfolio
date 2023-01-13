@@ -39,7 +39,7 @@ const AboutMe = ({ containerWidth, id }: Props) => {
                     </div>
                     <Image src={'/media/icon_lamp.svg'} alt='Dark, light mode switch' width={45} height={45} priority className="opacity-80 dark:invert" />
                 </div>
-                <h1 className="text-black dark:text-white text-4xl leading-[25px] sm:leading-[30px] font-thin px-7">About me</h1>
+                <h1 className="text-black dark:text-white text-4xl leading-[25px] sm:leading-[25px] font-thin px-7">About me</h1>
             </div>
             <div className="border-t border-slate-300" />
             <div className="bg-gray-100 px-10 pt-10 pb-20 dark:bg-slate-700">
@@ -47,7 +47,7 @@ const AboutMe = ({ containerWidth, id }: Props) => {
                 <div className={`${containerWidth} m-auto
                 flex flex-wrap-reverse sm:flex-wrap justify-center`}>
                     <p className="sm:basis-2/3 self-center sm:pl-5 py-10
-                    font-light font- first-letter:text-4xl first-letter:font-light indent-4 text-lg text-slate-900 dark:text-slate-200 leading-normal tracking-tight whitespace-pre-line">
+                    font-light font- first-letter:text-4xl first-letter:font-bold indent-4 text-lg text-slate-900 dark:text-slate-200 leading-normal tracking-tight whitespace-pre-line">
                         {`Hello, I'm Ivan! I enjoy creating things that combine engineering and the latest tech alongside business thinking and strategy. All of that wrapped up in an agile environment.
 
                         I love to code and also love to give that code meaning by using my 

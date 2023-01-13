@@ -52,7 +52,7 @@ const Resume = ({ containerWidth, id }: Props) => {
                             </div>
                     }
                 </div>
-                <h1 className="text-black dark:text-white text-4xl leading-[25px] sm:leading-[30px] font-thin px-7">Resume</h1>
+                <h1 className="text-black dark:text-white text-4xl leading-[25px] sm:leading-[25px] font-thin px-7">Resume</h1>
             </div>
             <div className="border-t border-slate-300" />
             <div className="bg-gray-100 dark:bg-slate-700 pt-10 pb-20 sm:pt-14">
@@ -67,7 +67,7 @@ const Resume = ({ containerWidth, id }: Props) => {
                 </div>
 
                 <div className={`${containerWidth} m-auto px-5 sm:px-0 mt-8`}>
-                    <h1 className="text-2xl leading-[15px] sm:leading-[20px] font-light text-center sm:text-left px-5 ">{"In brief"}</h1>
+                    <h1 className="text-2xl leading-[15px] sm:leading-[16px] font-light text-center sm:text-left px-5 ">{"In brief"}</h1>
                     <div className="border-t border-slate-300" />
                 </div>
 
@@ -115,7 +115,7 @@ const Resume = ({ containerWidth, id }: Props) => {
                 </div>
 
                 <div className={`${containerWidth} m-auto px-5 sm:px-0 mt-8`}>
-                    <h1 className="text-2xl leading-[15px] sm:leading-[20px] font-light text-center sm:text-left px-5 ">{"Currently working at"}</h1>
+                    <h1 className="text-2xl leading-[15px] sm:leading-[16px] font-light text-center sm:text-left px-5 ">{"Currently working at"}</h1>
                     <div className="border-t border-slate-300" />
                     <h4 className="text-lg font-semibold text-center my-12">{`Cambridge Intelligence - `} <Tooltip_Responsinve
                         text="Software Developer"
