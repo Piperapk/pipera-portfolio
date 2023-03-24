@@ -33,6 +33,23 @@ const AboutMe = ({ containerWidth, id }: Props) => {
     return (
         <div className="mt-20">
             <div className={`${containerWidth} m-auto flex items-end`}>
+
+                {/* <div className="w-[500px] h-16 m-auto flex absolute">
+                    {
+                        new Array(30).fill(0).map((e, i) => {
+                            let element
+                            const boxShadows = 'shadow-[0.5px_0_1px_0_rgba(255,255,255,0.2),-0.3px_0_1px_0_rgba(3,3,3,0.2)] dark:shadow-[0.5px_0_1px_0_rgba(255,255,255,0.2),-0.3px_0_0px_0_rgba(3,3,3,0.2)]'
+                            if (i == 0 || i == 29) {
+                                element = <div key={i} className={`w-[10px] ${i == 0 ? 'rounded-l-[3px]' : 'rounded-r-[3px]'}
+                min-h-full bg-white/20 backdrop-blur-sm ${boxShadows}`}></div>
+                            } else {
+                                element = <div key={i} className={`w-[10px] min-h-full bg-white/20 backdrop-blur-[3px] ` + boxShadows}></div>
+                            }
+                            return element
+                        })
+                    }
+                </div> */}
+
                 <div onClick={iconClick} className="relative translate-y-[7px] pl-5 cursor-default sm:cursor-pointer">
                     <div className="absolute top-[13px] -right-[23px] hidden dark:block">
                         <Image src={'/media/lamp_light.svg'} alt='Dark, light mode switch on' width={40} height={32} priority className="" />

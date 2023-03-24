@@ -31,6 +31,7 @@ module.exports = {
         "fade-in": "fade-in 0.5s ease-in",
         "fade-in-fast": "fade-in 0.25s",
         "fade-out": "fade-out 0.5s ease-in forwards",
+        "fade-out-slow": "fade-out-slow 3s ease-in forwards",
         slide: "slide-in 0.5s",
         breathe: "breathe 6s infinite",
       },
@@ -49,6 +50,20 @@ module.exports = {
         "fade-out": {
           "0%": { opacity: "100" },
           "100%": { opacity: "0" },
+        },
+        "fade-out-slow": {
+          "0%": {
+            "box-shadow":
+              "0.5px 0 1px 0 rgba(255, 255, 255, 0.2), -0.3px 0 1px 0 rgba(3, 3, 3, 0.2);",
+            "backdrop-filter": "blur(3px)",
+            background: "rgba( 255, 255, 255, 0.2 )",
+          },
+          "100%": {
+            "box-shadow":
+              "0.5px 0 1px 0 rgba(255, 255, 255, 0), -0.3px 0 6px 0 rgba(3, 3, 3, 0);",
+            "backdrop-filter": "blur(0)",
+            background: "rgba( 255, 255, 255, 0 )",
+          },
         },
         "slide-in": {
           "0%": { transform: "translateX(0px)", opacity: "100" },

@@ -12,27 +12,26 @@ const HeroPage = ({ containerWidth }: Props) => {
   return (
     <Fragment>
       <div id="home" className='text-center m-10 sm:m-[70px] text-4xl font-bold relative'>
-        <h1 className="">Hi, <Tooltip_Responsinve
+        <h1>Hi, <Tooltip_Responsinve
           text="welcome"
           tooltipText="Lovingly designed and built with Next.js and Tailwind"
           timerMobile={3000} />
           to my work.
         </h1>
-        <div className="w-[500px] h-16 m-auto flex absolute top-[-10px] left-[300px]">
+        {/* <div className="w-[500px] h-16 m-auto flex">
           {
             new Array(50).fill(0).map((e, i) => {
               let element
-              const boxShadows = 'shadow-[0.5px_0_1px_0_rgba(255,255,255,0.2),-0.3px_0_0px_0_rgba(3,3,3,0.2)]'
               if (i == 0 || i == 49) {
                 element = <div key={i} className={`w-[10px] ${i == 0 ? 'rounded-l-[3px]' : 'rounded-r-[3px]'}
-                min-h-full bg-white/20 backdrop-blur-sm ${boxShadows}`}></div>
+                min-h-full animate-fade-out-slow}`}></div>
               } else {
-                element = <div key={i} className={`w-[10px] min-h-full bg-white/20 backdrop-blur-[3px] ` + boxShadows}></div>
+                element = <div key={i} className={`w-[10px] min-h-full animate-fade-out-slow`}></div>
               }
               return element
             })
           }
-        </div>
+        </div> */}
       </div>
 
       <div className={`flex flex-wrap sm:flex-nowrap grid-cols-2 grid-rows-1 ${containerWidth} m-auto`}>
