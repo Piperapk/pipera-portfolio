@@ -48,6 +48,7 @@ const HeroPage = ({ containerWidth }: Props) => {
             <div className='text-lg text-slate-500 dark:text-gray-300 leading-tight font-light'>
               <h4>Web Developer</h4>
               <h4>Cambridge, UK</h4>
+              <h4 className="text-primary"><a href="https://cambridge-intelligence.com/">Cambridge Intelligence</a></h4>
             </div>
           </div>
           <div className='flex pt-2 space-x-1.5 justify-center sm:justify-start'>
