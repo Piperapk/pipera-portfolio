@@ -32,7 +32,7 @@ const HeroPage = ({ containerWidth }: Props) => {
           <div>
             <h3 className='text-2xl'>Ivan Krushkov</h3>
             <div className='text-lg text-slate-500 dark:text-gray-300 leading-tight font-light'>
-              <h4>Web Developer</h4>
+              <h4>Software Developer</h4>
               <h4>Cambridge, UK</h4>
               <h4 className="text-primary"><a href="https://cambridge-intelligence.com/">Cambridge Intelligence</a></h4>
             </div>
