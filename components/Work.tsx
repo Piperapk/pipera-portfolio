@@ -71,9 +71,9 @@ const Work = forwardRef(({ containerWidth, id, portfolioData }: Props, ref) => {
         >
           <div
             onClick={iconClick}
-            className="relative translate-y-[7.5px] pl-5 cursor-default sm:cursor-pointer"
+            className="relative pl-5 cursor-default sm:cursor-pointer"
           >
-            <div className="absolute -top-[5px] right-[3px] hidden dark:block">
+            <div className="absolute top-[5px] right-[3px] hidden dark:block">
               <Image
                 src={"/media/desk_light.svg"}
                 alt="Dark, light mode switch on"
