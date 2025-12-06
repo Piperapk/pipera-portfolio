@@ -10,7 +10,7 @@
     "test": "jest --watch"
   },
   "dependencies": {
-    "next": "^15.4.6",
+    "next": "^16.0.7",
     "next-themes": "^0.1.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
