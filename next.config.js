@@ -21,14 +21,6 @@ const nextConfig = {
     return config;
   },
   turbopack: {},
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "res.cloudinary.com",
-      },
-    ],
-  },
 };
 
 module.exports = nextConfig;

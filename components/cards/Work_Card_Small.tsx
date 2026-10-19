@@ -1,6 +1,7 @@
 import React from "react";
 import Button_Badge_Array from "../buttons/Button_Badge_Array"
 import { Button } from "../buttons/Button_Badge";
+import Markdown from "../Markdown";
 
 export interface Props {
     containerWidth?: string //Max width of the container
@@ -29,9 +30,7 @@ const Work_Card = ({
             </div>
             <div className="flex-auto bg-white dark:bg-slate-600 shadow-md-center text-black dark:text-white
             rounded-b-2xl px-5 py-3">
-                <p className="font-light text-base whitespace-pre-line pb-3">
-                    {textBody}
-                </p>
+                <div className="pb-3"><Markdown>{textBody}</Markdown></div>
                 <div className="flex flex-wrap gap-y-4">
                     <div className="flex-auto flex flex-wrap items-center gap-1">
                         <Button_Badge_Array buttons={tagButtons} bgColor="bg-secondary" textSize="text-sm" paddingY="py-[2px]"/>

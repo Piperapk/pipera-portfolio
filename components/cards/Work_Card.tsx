@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Button_Badge_Array from "../buttons/Button_Badge_Array";
 import { Button } from "../buttons/Button_Badge";
+import Markdown from "../Markdown";
 
 export interface Props {
   containerWidth?: string; //Max width of the container
@@ -12,6 +13,7 @@ export interface Props {
   tagButtons: Button[];
   linkButtons: Button[];
   image: string;
+  imageAlt: string;
 }
 
 const Work_Card = ({
@@ -22,6 +24,7 @@ const Work_Card = ({
   tagButtons,
   linkButtons,
   image,
+  imageAlt,
 }: Props) => {
   //Dynamic resize of the card element's text padding
   const [cardTopBarHeight, setCardTopBarHeight] = useState<number>();
@@ -95,7 +98,7 @@ const Work_Card = ({
           >
             <Image
               src={image}
-              alt="work project"
+              alt={imageAlt}
               height="500"
               width="700"
               className="object-cover"
@@ -143,14 +146,10 @@ const Work_Card = ({
             style={{ paddingTop: cardTopBarHeight }}
           >
             <span className="font-bold text-base">Case: </span>
-            <p className="font-light text-base whitespace-pre-line">
-              {textBodyCase}
-            </p>
+            <Markdown>{textBodyCase}</Markdown>
             <div className="border-t border-slate-300 my-2" />
             <span className="font-bold text-base">Outcome: </span>
-            <p className="font-light text-base whitespace-pre-line">
-              {textBodyOutcome}
-            </p>
+            <Markdown>{textBodyOutcome}</Markdown>
           </div>
         </div>
         <div
