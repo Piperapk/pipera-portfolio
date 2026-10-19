@@ -1,10 +1,11 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { describe, it, expect } from "@jest/globals";
+import "@testing-library/jest-dom/jest-globals";
 
 //Components to test
 import Word_Card, { Props as WorkCardProps } from "../components/cards/Work_Card";
 import AboutMe from "../components/AboutMe";
 import Index, { Props as IndexProps } from '../pages/index'
-import type { PortfolioWorks, OpenSourceWorks } from "../types/PortfolioData.Interface"
 
 
 const defaultWorkCardProps: WorkCardProps = {
@@ -21,7 +22,8 @@ const defaultWorkCardProps: WorkCardProps = {
           "imgPath": "/media/icon_github.svg"
         }
       ],
-    image: '/media/work/adventureme.jpg'
+    image: '/media/work/adventureme.jpg',
+    imageAlt: 'AdventureMe project screenshot'
 };
 
 const  defaultIndexProps: IndexProps = {
@@ -32,8 +34,8 @@ const  defaultIndexProps: IndexProps = {
 describe('Work Cards', () => {
     it('Renders Work_Card component', () => {
         render(<Word_Card {...defaultWorkCardProps}/>);
-
-        // screen.debug();
+        expect(screen.getByRole('heading', { name: 'Card title' })).toBeInTheDocument();
+        expect(screen.getByRole('img', { name: 'AdventureMe project screenshot' })).toBeInTheDocument();
     })
 })
 
@@ -44,7 +46,7 @@ describe('Dark/Light mode', () => {
         // screen.debug();
 
         const switches = screen.getAllByRole('img', {name: 'Dark, light mode switch'});
-        fireEvent(switches[0], new MouseEvent ('click'));
+        fireEvent.click(switches[0]);
 
         // screen.debug();
 
@@ -58,11 +60,10 @@ describe('Easter eggs', () => {
         // screen.debug();
 
         const switches = await screen.findAllByRole('img', {name: 'Dark, light mode switch'});
-        fireEvent(switches[0], new MouseEvent ('click'));
+        fireEvent.click(switches[0]);
 
-        waitFor(() => {
-            expect(screen.findAllByRole('img', {name: 'Dark, light mode switch'})).toBeInTheDocument();
-            // screen.debug(undefined, 300000);
+        await waitFor(() => {
+            expect(screen.getByText("You've found 1 of 8 Easter Egg")).toBeInTheDocument();
         })
 
     })

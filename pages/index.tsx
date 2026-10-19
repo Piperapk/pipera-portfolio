@@ -1,8 +1,26 @@
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
-import Head from "next/head";
+import { Metadata } from "next";
 import React, { createRef, useState } from "react";
-import { EasterEggContext } from "../context/EasterEggContext"
-import type { PortfolioWorks, OpenSourceWorks } from "../types/PortfolioData.Interface"
+import { EasterEggContext } from "../context/EasterEggContext";
+import type { PortfolioData } from "../types/PortfolioData.Interface";
+import { getPortfolioData } from "../lib/portfolio";
+
+export const metadata: Metadata = {
+  title: "Ivan Krushkov - Software Developer - Personal Portfolio and Work",
+  description:
+    "I use Software and Business Development to create long-term value through technology.",
+  openGraph: {
+    title: "Ivan Krushkov - Software Developer - Personal Portfolio and Work",
+    description:
+      "I use Software and Business Development to create long-term value through technology.",
+    url: "http://ikrushkov.com/",
+    images: [
+      {
+        url: "https://www.ikrushkov.com/_next/image?url=%2Fmedia%2Fprofile_picture_500x.jpg&w=256&q=75",
+      },
+    ],
+  },
+};
 
 /* Components */
 import HeroPage from "../components/HeroPage";
@@ -13,26 +31,20 @@ import Resume from "../components/Resume";
 import Contact from "../components/Contact";
 import EasterEggCounter from "../components/EasterEggCounter";
 
-const STRAPIURL = process.env.STRAPI_LOCAL_URL;
-
-export interface Props {
-    works: PortfolioWorks[]
-    openSourceWorks: OpenSourceWorks[]
-}
+export type Props = PortfolioData;
 
 const Home: NextPage<Props> = ({
-    works,
-    openSourceWorks
+  works,
+  openSourceWorks,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const containerWidth: string = "max-w-4xl";
 
-    const containerWidth: string = "max-w-4xl";
+  const workRef = createRef<Text>();
 
-    const workRef = createRef<Text>();
-
-    // Structured Data
-    function addProductJsonLd() {
-        return {
-            __html: `{
+  // Structured Data
+  function addProductJsonLd() {
+    return {
+      __html: `{
         "@context": "https://schema.org",
         "@type": "Person",
         "email": "mailto:i.krushkov@outlook.com",
@@ -43,105 +55,56 @@ const Home: NextPage<Props> = ({
         "familyName": "Krushkov",
         "url": "http://ikrushkov.com"
       }`,
-        };
+    };
+  }
+
+  // Easter egg state tracker and updater
+  const [eggCount, setEggCount] = useState<number>(0);
+  const [isMaxEggs, setIsMaxEggs] = useState<boolean>(false);
+
+  const updateEggCount = (newCount: number) => {
+    setEggCount(newCount);
+    if (newCount >= 8) {
+      setIsMaxEggs(true);
     }
+  };
 
-    // Easter egg state tracker and updater
-    const [eggCount, setEggCount] = useState<number>(0);
-    const [isMaxEggs, setIsMaxEggs] = useState<boolean>(false);
+  const contextValues = {
+    eggCount,
+    isMaxEggs,
+    updateEggCount,
+  };
 
-    const updateEggCount = (newCount: number) => {
-        setEggCount(newCount);
-        if (newCount >= 8) {
-            setIsMaxEggs(true);
-        }
-    }
+  const portfolioData = {
+    works,
+    openSourceWorks,
+  };
 
-    const contextValues = {
-        eggCount,
-        isMaxEggs,
-        updateEggCount
-    }
-
-    const portfolioData = {
-        works,
-        openSourceWorks
-    }
-
-    return (
-        <div>
-            <Head>
-                <title>
-                    Ivan Krushkov - Software Developer - Personal Portfolio and Work
-                </title>
-                <meta
-                    name="description"
-                    content="I use Software and Business Development to create long-term value through technology."
-                />
-
-                <meta property="og:url" content="http://ikrushkov.com/" />
-                <meta
-                    property="og:title"
-                    content="Ivan Krushkov - Software Developer - Personal Portfolio and Work"
-                />
-                <meta
-                    property="og:description"
-                    content="I use Software and Business Development to create long-term value through technology."
-                />
-                <meta
-                    property="og:image"
-                    content={`https://www.ikrushkov.com/_next/image?url=%2Fmedia%2Fprofile_picture_500x.jpg&w=256&q=75`}
-                />
-
-                <link rel="icon" href="/favicon.svg" />
-
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={addProductJsonLd()}
-                    key="product-jsonld"
-                />
-            </Head>
-            <div>
-                <EasterEggContext.Provider value={contextValues}>
-                    <Navigation />
-                    <HeroPage containerWidth={containerWidth} />
-                    <AboutMe id="about" containerWidth={containerWidth} />
-                    <Work id="work" ref={workRef} containerWidth={containerWidth} portfolioData={portfolioData} />
-                    <Resume id="resume" containerWidth={containerWidth} />
-                    <Contact id="contact" containerWidth={containerWidth} />
-                    <EasterEggCounter />
-                </EasterEggContext.Provider>
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <div>
+        <EasterEggContext.Provider value={contextValues}>
+          <Navigation />
+          <HeroPage containerWidth={containerWidth} />
+          <AboutMe id="about" containerWidth={containerWidth} />
+          <Work
+            id="work"
+            ref={workRef}
+            containerWidth={containerWidth}
+            portfolioData={portfolioData}
+          />
+          <Resume id="resume" containerWidth={containerWidth} />
+          <Contact id="contact" containerWidth={containerWidth} />
+          <EasterEggCounter />
+        </EasterEggContext.Provider>
+      </div>
+    </div>
+  );
 };
 
-// Get data from Strapi. We call getStaticProps as this is the only Next.js page on the website.
-export const getStaticProps: GetStaticProps = async () => {
-
-    try {
-        const resWork = await fetch(`${STRAPIURL}/works?populate=*`);
-        const dataWork = await resWork.json();
-        const works: PortfolioWorks = dataWork.data;
-
-        const resOpenSourceWork = await fetch(`${STRAPIURL}/open-source-works?populate=*`);
-        const dataOpenSourceWork = await resOpenSourceWork.json();
-        const openSourceWorks: PortfolioWorks = dataOpenSourceWork.data;
-
-        return {
-            props: {
-                works,
-                openSourceWorks
-            },
-        }
-    } catch (error) {
-        console.error(error);
-        return {
-            props: {},
-        }
-    }
-
-
-}
+// Read versioned Markdown at build time. Invalid content fails the build visibly.
+export const getStaticProps: GetStaticProps<Props> = async () => ({
+  props: getPortfolioData(),
+});
 
 export default Home;

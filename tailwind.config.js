@@ -31,7 +31,7 @@ module.exports = {
         "fade-in": "fade-in 0.5s ease-in",
         "fade-in-fast": "fade-in 0.25s",
         "fade-out": "fade-out 0.5s ease-in forwards",
-        "fade-out-slow": "fade-out-slow 3s ease-in forwards",
+        "fade-out-slow": "fade-out-slow 5s ease-in forwards",
         slide: "slide-in 0.5s",
         breathe: "breathe 6s infinite",
       },

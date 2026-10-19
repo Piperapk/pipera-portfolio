@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: "standalone",
   //SVGR
   webpack(config) {
     config.module.rules.push(
@@ -19,10 +20,8 @@ const nextConfig = {
 
     return config;
   },
-  images: {
-    domains: ["res.cloudinary.com"],
-  },
   staticPageGenerationTimeout: 300,
+  turbopack: {},
 };
 
 module.exports = nextConfig;

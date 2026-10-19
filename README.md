@@ -4,26 +4,24 @@
 <h1>
 </div>
 
-Refresh on my [portfolio](https://ikrushkov.com/) built with Next.js, Typescript and deployed on Vercel. Designed with love in Adobe XD and using Tailwind. Strapi CMS used for content management.
+My [portfolio](https://ikrushkov.com/) is built with Next.js, TypeScript and Tailwind and deployed on Vercel. Project content lives in Markdown files in this repository; images are served from `public/`.
 
 ## Forking and using the repo
+
 - If you want to distribute or use the code for your own project please get in touch first. It's not a problem, please just ask first.
-- GitHub’s Terms of Service apply to this repo so you can freely fork it but id doesn't come with any permissions. 
+- GitHub’s Terms of Service apply to this repo so you can freely fork it but id doesn't come with any permissions.
 
-## 🛠 Getting Started
+## Getting started
 
-- First, run the development server:
+Use Node.js 20.9 or newer (a current LTS release is recommended) and Yarn Classic 1.22.22.
 
-    ```bash
-    npm run dev
-    # or
-    yarn dev
-    ```
+```bash
+yarn install
+yarn dev
+```
 
-- Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [localhost:3000](http://localhost:3000). The webpack flag in the dev/build scripts preserves the existing SVG configuration.
 
-## 📅 Connect to Strapi CMS
+## Managing projects
 
-- Open "index.tsx" and change all instances of "STRAPIURL" to the API URLs you want to use for fetching blog data.
-
-- Make sure that your Strapi data follows the TypeScript interface found in "types/PortfolioData.Interface.ts
+Each project is one `.md` file in `content/work/`. The filename is its unique slug: use lowercase words separated by hyphens. Add its image to `public/media/work/`, then copy an existing project or use this example:
