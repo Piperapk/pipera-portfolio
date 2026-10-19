@@ -20,15 +20,8 @@ const nextConfig = {
 
     return config;
   },
+  staticPageGenerationTimeout: 300,
   turbopack: {},
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "res.cloudinary.com",
-      },
-    ],
-  },
 };
 
 module.exports = nextConfig;

@@ -2,10 +2,8 @@ import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import { Metadata } from "next";
 import React, { createRef, useState } from "react";
 import { EasterEggContext } from "../context/EasterEggContext";
-import type {
-  PortfolioWorks,
-  OpenSourceWorks,
-} from "../types/PortfolioData.Interface";
+import type { PortfolioData } from "../types/PortfolioData.Interface";
+import { getPortfolioData } from "../lib/portfolio";
 
 export const metadata: Metadata = {
   title: "Ivan Krushkov - Software Developer - Personal Portfolio and Work",
@@ -33,12 +31,7 @@ import Resume from "../components/Resume";
 import Contact from "../components/Contact";
 import EasterEggCounter from "../components/EasterEggCounter";
 
-const STRAPIURL = process.env.STRAPI_LOCAL_URL;
-
-export interface Props {
-  works: PortfolioWorks[];
-  openSourceWorks: OpenSourceWorks[];
-}
+export type Props = PortfolioData;
 
 const Home: NextPage<Props> = ({
   works,
@@ -109,38 +102,9 @@ const Home: NextPage<Props> = ({
   );
 };
 
-// Get data from Strapi. We call getStaticProps as this is the only Next.js page on the website.
-export const getStaticProps: GetStaticProps = async () => {
-  try {
-    const [worksRes, openSourceWorksRes] = await Promise.all([
-      fetch(`${STRAPIURL}/works?populate=*`),
-      fetch(`${STRAPIURL}/open-source-works?populate=*`),
-    ]);
-
-    if (!worksRes.ok || !openSourceWorksRes.ok) {
-      throw new Error("Failed to fetch data");
-    }
-
-    const [worksData, openSourceWorksData] = await Promise.all([
-      worksRes.json(),
-      openSourceWorksRes.json(),
-    ]);
-
-    return {
-      props: {
-        works: worksData.data || [],
-        openSourceWorks: openSourceWorksData.data || [],
-      },
-    };
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return {
-      props: {
-        works: [],
-        openSourceWorks: [],
-      },
-    };
-  }
-};
+// Read versioned Markdown at build time. Invalid content fails the build visibly.
+export const getStaticProps: GetStaticProps<Props> = async () => ({
+  props: getPortfolioData(),
+});
 
 export default Home;

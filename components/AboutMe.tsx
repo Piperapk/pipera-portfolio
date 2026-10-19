@@ -90,7 +90,7 @@ const AboutMe = ({ containerWidth, id }: Props) => {
             </div>
           </div>
           <div
-            className="sm:hidden self-center sm:pl-12 
+            className="sm:hidden self-center sm:pl-12
                     w-[140px] h-[140px] bg-white flex rounded-full justify-center items-center"
           >
             <div className="w-[130px] h-[130px] bg-white rounded-full overflow-hidden">

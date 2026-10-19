@@ -2,31 +2,29 @@ import React, {
   forwardRef,
   Fragment,
   useContext,
-  useMemo,
   useState,
 } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { EasterEggContext } from "../context/EasterEggContext";
-import type {
-  OpenSourceWorks,
-  PortfolioWorks,
-} from "../types/PortfolioData.Interface";
+import type { PortfolioData, ProjectBase } from "../types/PortfolioData.Interface";
 
 // Component imports
 import Work_Card from "./cards/Work_Card";
 import Work_Card_Small from "./cards/Work_Card_Small";
 
-interface DataIngestionProps {
-  works: PortfolioWorks[];
-  openSourceWorks: OpenSourceWorks[];
-}
-
 interface Props {
   containerWidth?: string;
   id?: string;
-  portfolioData: DataIngestionProps;
+  portfolioData: PortfolioData;
 }
+
+const tagButtons = (project: ProjectBase) => project.tags.map((text) => ({ text }));
+const linkButtons = (project: ProjectBase) => project.links.map((link) => ({
+  text: link.label,
+  imgUrl: link.url,
+  imgPath: link.icon,
+}));
 
 const Work = forwardRef(({ containerWidth, id, portfolioData }: Props, ref) => {
   const { theme, setTheme } = useTheme();
@@ -47,21 +45,6 @@ const Work = forwardRef(({ containerWidth, id, portfolioData }: Props, ref) => {
       eggCountContext.updateEggCount(eggCountContext.eggCount + 1);
     }
   };
-
-  const portfolioDataSortedByPinned = useMemo(() => {
-    return {
-      ...portfolioData,
-      works: portfolioData.works.sort((a, b) => {
-        if (a.attributes.pinned && !b.attributes.pinned) {
-          return -1;
-        }
-        if (!a.attributes.pinned && b.attributes.pinned) {
-          return 1;
-        }
-        return 0;
-      }),
-    };
-  }, [portfolioData]);
 
   return (
     <Fragment>
@@ -107,20 +90,17 @@ const Work = forwardRef(({ containerWidth, id, portfolioData }: Props, ref) => {
       </div>
 
       <div className="p-10 sm:pt-10 space-y-10">
-        {portfolioDataSortedByPinned.works.map((workCard) => (
+        {portfolioData.works.map((workCard) => (
           <Work_Card
-            key={workCard.id}
+            key={workCard.slug}
             containerWidth={containerWidth}
-            title={workCard.attributes.title}
-            textBodyCase={workCard.attributes.textCase}
-            textBodyOutcome={workCard.attributes.textOutcome}
-            tagButtons={workCard.attributes.tagButtons}
-            linkButtons={workCard.attributes.linkButtons}
-            image={
-              workCard.attributes.image.data !== null
-                ? workCard.attributes.image.data.attributes.url
-                : workCard.attributes.localImageUrl!
-            }
+            title={workCard.title}
+            textBodyCase={workCard.textCase}
+            textBodyOutcome={workCard.textOutcome}
+            tagButtons={tagButtons(workCard)}
+            linkButtons={linkButtons(workCard)}
+            image={workCard.image}
+            imageAlt={workCard.imageAlt}
           />
         ))}
       </div>
@@ -135,12 +115,12 @@ const Work = forwardRef(({ containerWidth, id, portfolioData }: Props, ref) => {
       <div className="p-10 sm:pt-10 space-y-10">
         {portfolioData.openSourceWorks.map((openSourceCard) => (
           <Work_Card_Small
-            key={openSourceCard.id}
+            key={openSourceCard.slug}
             containerWidth={containerWidth}
-            title={openSourceCard.attributes.title}
-            textBody={openSourceCard.attributes.textBody}
-            tagButtons={openSourceCard.attributes.tagButtons}
-            linkButtons={openSourceCard.attributes.linkButtons}
+            title={openSourceCard.title}
+            textBody={openSourceCard.textBody}
+            tagButtons={tagButtons(openSourceCard)}
+            linkButtons={linkButtons(openSourceCard)}
           />
         ))}
       </div>
