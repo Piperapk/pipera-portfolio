@@ -36,7 +36,7 @@ const AboutMe = ({ containerWidth, id }: Props) => {
           onClick={iconClick}
           className="relative pl-5 cursor-default sm:cursor-pointer"
         >
-          <div className="absolute top-[13px] -right-[23px] hidden dark:block">
+          <div className="absolute top-[13px] right-[-23px] hidden dark:block">
             <Image
               src={"/media/lamp_light.svg"}
               alt="Dark, light mode switch on"
@@ -85,7 +85,7 @@ const AboutMe = ({ containerWidth, id }: Props) => {
                 alt="profile picture"
                 height="200"
                 width="200"
-                className="rounded-sm"
+                className="rounded-xs"
               />
             </div>
           </div>

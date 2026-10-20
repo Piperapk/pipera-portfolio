@@ -20,8 +20,6 @@ module.exports = {
       },
       screens: {
         containerWidth: "896px",
-        hh: { raw: "(hover: hover)" },
-        pf: { raw: "(pointer: fine)" },
       },
       fontFamily: {
         sans: ["Source Sans Pro", ...defaultTheme.fontFamily.sans],

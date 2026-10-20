@@ -49,7 +49,7 @@ const Work_Card = ({
     "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNUiWysBwADJgF/SiqohwAAAABJRU5ErkJggg==";
 
   return (
-    <div className={`${containerWidth} m-auto`}>
+    <div className={`${containerWidth} w-full mx-auto`}>
       <h1
         className="sm:px-5 pb-1
             text-2xl font-normal text-slate-800 dark:text-slate-200"
@@ -153,7 +153,7 @@ const Work_Card = ({
           </div>
         </div>
         <div
-          className="flex-auto basis-[100%] absolute inset-0 -z-10
+          className="flex-auto basis-full absolute inset-0 -z-10
                 shadow-md-center rounded-2xl"
         />
       </div>

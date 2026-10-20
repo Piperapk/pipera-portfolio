@@ -89,7 +89,7 @@ const Work = forwardRef(({ containerWidth, id, portfolioData }: Props, ref) => {
         <div className="border-t border-slate-300" />
       </div>
 
-      <div className="p-10 sm:pt-10 space-y-10">
+      <div className="p-10 sm:pt-10 flex flex-col gap-10">
         {portfolioData.works.map((workCard) => (
           <Work_Card
             key={workCard.slug}
@@ -112,7 +112,7 @@ const Work = forwardRef(({ containerWidth, id, portfolioData }: Props, ref) => {
         <div className="border-t border-slate-300" />
       </div>
 
-      <div className="p-10 sm:pt-10 space-y-10">
+      <div className="p-10 sm:pt-10 flex flex-col gap-10">
         {portfolioData.openSourceWorks.map((openSourceCard) => (
           <Work_Card_Small
             key={openSourceCard.slug}

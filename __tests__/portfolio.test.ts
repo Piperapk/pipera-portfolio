@@ -65,6 +65,26 @@ describe("Markdown portfolio content", () => {
     expect(getPortfolioData(root).works[0].textOutcome).toBe("A useful result.");
   });
 
+  it.each([
+    ["title: First\ntitle: Second\n", "invalid front matter"],
+    ["- not\n- a mapping\n", "metadata mapping"],
+    ["title: [unterminated\n", "invalid front matter"],
+  ])("rejects ambiguous or malformed YAML %s", (yaml, error) => {
+    fs.writeFileSync(path.join(root, "content/work/example.md"), `---\n${yaml}---\n${body}`);
+    expect(() => getPortfolioData(root)).toThrow(error);
+  });
+
+  it("requires a closing metadata delimiter", () => {
+    fs.writeFileSync(path.join(root, "content/work/example.md"), `---\n${metadata}${body}`);
+    expect(() => getPortfolioData(root)).toThrow("front matter must end with ---");
+  });
+
+  it("rejects excessive YAML alias expansion", () => {
+    const aliases = `seed: &seed [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\nlevel: &level [${Array(10).fill("*seed").join(", ")}]\nexpanded: [${Array(10).fill("*level").join(", ")}]\n`;
+    fs.writeFileSync(path.join(root, "content/work/example.md"), `---\n${metadata}${aliases}---\n${body}`);
+    expect(() => getPortfolioData(root)).toThrow("invalid front matter");
+  });
+
   it("does not mistake headings inside fenced code for card sections", () => {
     writeWork("example", "", "## Case\n\n```markdown\n## Outcome\n```\n\n## Outcome\n\nResult");
     expect(getPortfolioData(root).works[0].textCase).toBe("```markdown\n## Outcome\n```");

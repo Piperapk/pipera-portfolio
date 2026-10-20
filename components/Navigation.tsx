@@ -24,17 +24,17 @@ const navbarControl = () => {
 
 return(
     <Fragment>
-        <nav className={`py-3 flex justify-center space-x-3 sm:space-x-8 uppercase bg-white dark:bg-slate-900 border-b-[1px] border-slate-200 dark:border-transparent
-        sticky top-0 z-50 backdrop-blur-sm bg-opacity-80 dark:bg-opacity-60
-        transition-transform ease-in duration-200 ${showNavbar ? '' : '-translate-y-[80px] -my-8'}`}>
+        <nav className={`py-3 flex justify-center space-x-3 sm:space-x-8 uppercase bg-white/80 dark:bg-slate-900/60 border-b border-slate-200 dark:border-transparent
+        sticky top-0 z-50 backdrop-blur-xs
+        transition-transform ease-in duration-200 ${showNavbar ? '' : 'translate-y-[-80px] -my-8'}`}>
             {[
                 ['Home', '#'],
                 ['Work', '#work'],
                 ['Contact', '#contact'],
             ].map(([title, url]) => (
                 <a key={title} href={url} className="rounded-3xl px-3 py-1.5 text-black dark:text-white text-base font-normal 
-                pf:hh:hover:outline pf:hh:hover:outline-1 pf:hh:hover:outline-rose-400  pf:hh:hover:text-rose-400
-                active:outline active:outline-1 active:outline-rose-400  active:text-rose-400
+                pf:hh:hover:outline-solid pf:hh:hover:outline-1 pf:hh:hover:outline-rose-400  pf:hh:hover:text-rose-400
+                active:outline-solid active:outline-1 active:outline-rose-400  active:text-rose-400
                 ">{title}</a>
             ))}
         </nav>
@@ -43,4 +43,4 @@ return(
 
 }
 
-export default Navigation;  
+export default Navigation;

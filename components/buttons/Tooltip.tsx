@@ -11,7 +11,7 @@ interface Props {
 const Tooltip = ({
     text,
     bgColor = "secondary",
-    adjustHPositionLeft = "-left-[80%]",
+    adjustHPositionLeft = "left-[-80%]",
     adjustVPositionMarginTop = "-mt-8"
 }:Props) => {
     return(
