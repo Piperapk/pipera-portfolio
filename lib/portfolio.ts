@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import matter from "gray-matter";
+import { parse } from "yaml";
 import type {
   OpenSourceWork,
   PortfolioData,
@@ -13,6 +13,23 @@ type Metadata = Record<string, unknown>;
 
 function fail(file: string, message: string): never {
   throw new Error(`${file}: ${message}`);
+}
+
+function frontMatter(source: string, file: string): { data: Metadata; content: string } {
+  const lines = source.replace(/^\uFEFF/, "").split(/\r?\n/);
+  if (lines[0]?.trim() !== "---") fail(file, "YAML front matter must start with ---");
+  const end = lines.findIndex((line, index) => index > 0 && line.trim() === "---");
+  if (end === -1) fail(file, "YAML front matter must end with ---");
+  let data: unknown;
+  try {
+    data = parse(lines.slice(1, end).join("\n"), { uniqueKeys: true, maxAliasCount: 50 });
+  } catch (error) {
+    fail(file, `invalid front matter: ${error instanceof Error ? error.message : String(error)}`);
+  }
+  if (!data || typeof data !== "object" || Array.isArray(data)) {
+    fail(file, "YAML front matter must contain a metadata mapping");
+  }
+  return { data: data as Metadata, content: lines.slice(end + 1).join("\n").trim() };
 }
 
 function requiredText(value: unknown, field: string, file: string): string {
@@ -91,13 +108,8 @@ function readCollection(root: string, collection: string) {
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) {
       fail(file, "filename must use lowercase words separated by hyphens");
     }
-    let parsed: ReturnType<typeof matter>;
-    try {
-      parsed = matter(fs.readFileSync(path.join(directory, name), "utf8"));
-    } catch (error) {
-      fail(file, `invalid front matter: ${error instanceof Error ? error.message : String(error)}`);
-    }
-    const data: Metadata = parsed.data;
+    const parsed = frontMatter(fs.readFileSync(path.join(directory, name), "utf8"), file);
+    const data = parsed.data;
     if (booleanField(data, "draft", file)) return [];
     return [{ file, slug, data, content: parsed.content.trim() }];
   });

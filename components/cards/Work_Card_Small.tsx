@@ -21,8 +21,8 @@ const Work_Card = ({
 }: Props) => {
 
     return (
-        <div className={`${containerWidth} m-auto flex flex-wrap`}>
-            <div className="flex-auto bg-gray-100 dark:bg-gradient-to-b from-slate-200 to-slate-300 rounded-t-2xl shadow-md-center border-t-[1px] border-x-[1px] border-gray-200/50">
+        <div className={`${containerWidth} w-full mx-auto flex flex-wrap`}>
+            <div className="flex-auto bg-gray-100 dark:bg-linear-to-b from-slate-200 to-slate-300 rounded-t-2xl shadow-md-center border-t border-x border-gray-200/50">
                 <h1 className="px-5 py-2
                 text-2xl font-normal text-slate-800 dark:text-slate-900">
                     {title}

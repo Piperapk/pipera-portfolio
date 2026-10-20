@@ -1,0 +1,88 @@
+{
+    "date":  "2026-10-20",
+    "baselineCommit":  "4967800",
+    "auditCommand":  "yarn audit --json",
+    "productionAuditCommand":  "yarn audit --json --groups dependencies",
+    "countNote":  "Yarn counts dependency paths; uniqueAdvisories deduplicates advisory IDs. Audit counts do not prove exploitability.",
+    "before":  {
+                   "uniqueAdvisories":  111,
+                   "vulnerabilities":  {
+                                           "info":  0,
+                                           "low":  18,
+                                           "moderate":  131,
+                                           "high":  318,
+                                           "critical":  2
+                                       },
+                   "uniqueBySeverity":  [
+                                            {
+                                                "severity":  "high",
+                                                "count":  64
+                                            },
+                                            {
+                                                "severity":  "moderate",
+                                                "count":  39
+                                            },
+                                            {
+                                                "severity":  "low",
+                                                "count":  6
+                                            },
+                                            {
+                                                "severity":  "critical",
+                                                "count":  2
+                                            }
+                                        ]
+               },
+    "after":  {
+                  "uniqueAdvisories":  2,
+                  "exitCode":  12,
+                  "vulnerabilities":  {
+                                          "info":  0,
+                                          "low":  0,
+                                          "moderate":  8,
+                                          "high":  1,
+                                          "critical":  0
+                                      },
+                  "advisories":  [
+                                     {
+                                         "id":  1240992,
+                                         "module":  "braces",
+                                         "severity":  "high",
+                                         "title":  "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+                                         "patched":  "\u003c0.0.0",
+                                         "url":  "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+                                         "paths":  [
+                                                       "eslint-config-next\u003e@next/eslint-plugin-next\u003efast-glob\u003emicromatch\u003ebraces"
+                                                   ]
+                                     },
+                                     {
+                                         "id":  1241202,
+                                         "module":  "sprintf-js",
+                                         "severity":  "moderate",
+                                         "title":  "sprintf-js vulnerable to denial of service through unbounded precision specifiers",
+                                         "patched":  "\u003c0.0.0",
+                                         "url":  "https://github.com/advisories/GHSA-hp3w-g68c-fv3c",
+                                         "paths":  [
+                                                       "jest\u003e@jest/core\u003e@jest/transform\u003ebabel-plugin-istanbul\u003e@istanbuljs/load-nyc-config\u003ejs-yaml\u003eargparse\u003esprintf-js",
+                                                       "@jest/globals\u003e@jest/expect\u003ejest-snapshot\u003e@jest/transform\u003ebabel-plugin-istanbul\u003e@istanbuljs/load-nyc-config\u003ejs-yaml\u003eargparse\u003esprintf-js",
+                                                       "jest\u003e@jest/core\u003ejest-runtime\u003ejest-snapshot\u003e@jest/transform\u003ebabel-plugin-istanbul\u003e@istanbuljs/load-nyc-config\u003ejs-yaml\u003eargparse\u003esprintf-js",
+                                                       "jest\u003e@jest/core\u003ejest-runner\u003ejest-runtime\u003ejest-snapshot\u003e@jest/transform\u003ebabel-plugin-istanbul\u003e@istanbuljs/load-nyc-config\u003ejs-yaml\u003eargparse\u003esprintf-js",
+                                                       "jest\u003e@jest/core\u003ejest-runtime\u003e@jest/globals\u003e@jest/expect\u003ejest-snapshot\u003e@jest/transform\u003ebabel-plugin-istanbul\u003e@istanbuljs/load-nyc-config\u003ejs-yaml\u003eargparse\u003esprintf-js",
+                                                       "jest\u003e@jest/core\u003ejest-runner\u003ejest-runtime\u003e@jest/globals\u003e@jest/expect\u003ejest-snapshot\u003e@jest/transform\u003ebabel-plugin-istanbul\u003e@istanbuljs/load-nyc-config\u003ejs-yaml\u003eargparse\u003esprintf-js",
+                                                       "jest\u003e@jest/core\u003ejest-config\u003ejest-circus\u003ejest-runtime\u003e@jest/globals\u003e@jest/expect\u003ejest-snapshot\u003e@jest/transform\u003ebabel-plugin-istanbul\u003e@istanbuljs/load-nyc-config\u003ejs-yaml\u003eargparse\u003esprintf-js",
+                                                       "jest\u003ejest-cli\u003e@jest/core\u003ejest-config\u003ejest-circus\u003ejest-runtime\u003e@jest/globals\u003e@jest/expect\u003ejest-snapshot\u003e@jest/transform\u003ebabel-plugin-istanbul\u003e@istanbuljs/load-nyc-config\u003ejs-yaml\u003eargparse\u003esprintf-js"
+                                                   ]
+                                     }
+                                 ]
+              },
+    "production":  {
+                       "uniqueAdvisories":  0,
+                       "exitCode":  0,
+                       "vulnerabilities":  {
+                                               "info":  0,
+                                               "low":  0,
+                                               "moderate":  0,
+                                               "high":  0,
+                                               "critical":  0
+                                           }
+                   }
+}

@@ -36,7 +36,7 @@ const Resume = ({ containerWidth, id }: Props) => {
         <div onClick={iconClick}>
           {isIconClick ? (
             <div className="relative pl-5 cursor-default sm:cursor-pointer">
-              <div className="absolute scale-[0.33] top-[-16px] -right-[12px] animate-fade-in">
+              <div className="absolute scale-[0.33] top-[-16px] right-[-12px] animate-fade-in">
                 <Image
                   src={"/media/icon_resume_tap.svg"}
                   alt="resume icon"
@@ -56,7 +56,7 @@ const Resume = ({ containerWidth, id }: Props) => {
             </div>
           ) : (
             <div className="relative pl-5 cursor-default sm:cursor-pointer">
-              <div className="absolute scale-[0.33] top-[-16px] -right-[12px] animate-fade-out">
+              <div className="absolute scale-[0.33] top-[-16px] right-[-12px] animate-fade-out">
                 <Image
                   src={"/media/icon_resume_tap.svg"}
                   alt="resume icon"

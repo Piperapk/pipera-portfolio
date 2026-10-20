@@ -43,7 +43,7 @@ const Contact = ({ containerWidth, id }: Props) => {
         <div
           className={`${containerWidth} m-auto flex items-end bg-gray-100 dark:bg-slate-700`}
         >
-          <div onClick={iconClick} className="flex translate-y-[1px]">
+          <div onClick={iconClick} className="flex translate-y-px">
             <div className="pl-5 cursor-default sm:cursor-pointer">
               <Image
                 src={"/media/icon_contact_pencils.svg"}
@@ -55,7 +55,7 @@ const Contact = ({ containerWidth, id }: Props) => {
               />
             </div>
             <div
-              className={`-ml-[11px] mt-[28px] cursor-default sm:cursor-pointer ${
+              className={`ml-[-11px] mt-[28px] cursor-default sm:cursor-pointer ${
                 isIconClick ? "animate-slide" : ""
               }`}
             >
@@ -82,7 +82,7 @@ const Contact = ({ containerWidth, id }: Props) => {
           <Tooltip_Responsinve
             text="hi"
             tooltipText="Hello there! ... General Kenobi!"
-            adjustHPositionLeft="-left-[112px]"
+            adjustHPositionLeft="left-[-112px]"
             adjustVPositionMarginTop="-mt-9"
             adjustVPositionMarginTopMobile="mt-8"
           />
@@ -104,7 +104,7 @@ const Contact = ({ containerWidth, id }: Props) => {
           <Tooltip_Responsinve
             text="Ivan Krushkov"
             tooltipText="return this.person"
-            adjustHPositionLeft="-left-[35px]"
+            adjustHPositionLeft="left-[-35px]"
             adjustVPositionMarginTop="-mt-9"
             adjustVPositionMarginTopMobile="-mt-14"
             widthMobile="w-[200px]"
